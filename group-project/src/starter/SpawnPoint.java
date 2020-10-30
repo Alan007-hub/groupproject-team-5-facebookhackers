@@ -5,13 +5,13 @@ private int yPosition;
 private int xPosition;
 
 void setX(int x) {
-	xPosition=x;
+	xPosition = x;
 	
 }
 
 
 void setY(int y) {
-	yPosition=y;
+	yPosition = y;
 }
 	
 
