@@ -1,4 +1,7 @@
 package starter;
+
+import acm.graphics.GImage;
+
 public class MainApplication extends GraphicsApplication {
 	public static final int WINDOW_WIDTH = 800;
 	public static final int WINDOW_HEIGHT = 600;
@@ -14,7 +17,10 @@ public class MainApplication extends GraphicsApplication {
 	}
 
 	public void run() {
-		System.out.println("Hello, world!");
+		//System.out.println("Hello, world!");
+		GImage image = new GImage("WhackAmole.png", 60, 110);
+		add(image);
+
 		somePane = new SomePane(this);
 		menu = new MenuPane(this);
 		switchToMenu();
