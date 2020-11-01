@@ -16,10 +16,12 @@ import java.awt.Font;
 
 import acm.graphics.GCompound;
 import acm.graphics.GLabel;
+import acm.graphics.GOval;
 import acm.graphics.GRoundRect;
 
 public class GButton extends GCompound {
-	private GRoundRect rect;
+	//private GRoundRect rect;
+	private GOval oval;
 	private GLabel message;
 
 	public static final int BUFFER = 20;
@@ -35,15 +37,22 @@ public class GButton extends GCompound {
 	public GButton(String label, double x, double y, double width, double height, Color col) {
 		super();
 		setLocation(x, y);
-		rect = new GRoundRect(0, 0, width, height);
-		rect.setFilled(true);
-		rect.setFillColor(col);
-		add(rect);
+		//r	ect = new GRoundRect(0, 0, width, height);
+		//	rect.setFilled(true);
+		//	rect.setFillColor(col);
+		//	add(rect);
+
+		oval = new GOval(0, 0, width, height);
+		oval.setFilled(true);
+		oval.setFillColor(col);
+		add(oval);
 		message = new GLabel(label);
+		message.setColor(col.white);
+		message.setFont("Brighly Crush");
 		sizeLabelFont(message, width - BUFFER, height - BUFFER);
-		double centerX = width / 2 - message.getWidth() / 2;
+		double centerX = width / 2 - message.getWidth()/ 2;
 		double centerY = height / 2 + message.getAscent() / 4;
-		add(message, centerX, centerY);
+		add(message, centerX, centerY + 15);
 	}
 
 	private void sizeLabelFont(GLabel label, double width, double height) {
