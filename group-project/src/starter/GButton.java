@@ -71,7 +71,7 @@ public class GButton extends GCompound {
 	}
 
 	public void setFillColor(Color col) {
-		rect.setFillColor(col);
+		oval.setFillColor(col);
 	}
 
 	public void setColor(Color col) {
