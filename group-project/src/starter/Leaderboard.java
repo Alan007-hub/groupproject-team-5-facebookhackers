@@ -1,7 +1,9 @@
 package starter;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -41,7 +43,7 @@ public class Leaderboard {
 		try {
 			File scoreFile = new File(filePath, highScores);
 			if(!scoreFile.isFile()) {
-				//Write a method to save the data
+				saveScores();
 			}
 			
 			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(scoreFile)));
@@ -60,7 +62,21 @@ public class Leaderboard {
 		}
 	}
 	
-	
+	public void saveScores() {
+		FileWriter output = null;
+		
+		try {
+			File file = new File(filePath, highScores);
+			output = new FileWriter(file);
+			BufferedWriter writer = new BufferedWriter(output);
+			
+			writer.write(topScores.get(0) + "." + topScores.get(1) + "." + topScores.get(2) + "." + topScores.get(3) + "." + topScores.get(4) + ".");
+			writer.close();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 	
