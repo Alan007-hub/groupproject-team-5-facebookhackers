@@ -1,5 +1,6 @@
 package starter;
 
-public class Mole {
-		private int xPosition, yPosition;
+public class Mole{
+		private SpawnPoint spawn;
+		
 }
