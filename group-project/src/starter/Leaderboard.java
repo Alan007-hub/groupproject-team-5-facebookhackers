@@ -78,9 +78,32 @@ public class Leaderboard {
 		}
 	}
 	
+	public void createSaveData() {
+		FileWriter output = null;
+		
+		try {
+			File file = new File(filePath, highScores);
+			output = new FileWriter(file);
+			BufferedWriter writer = new  BufferedWriter(output);
+			
+			writer.write("0 - 0 - 0 - 0 -0");
+			writer.newLine();
+			writer.close();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public int getHighScore() {
+		return topScores.get(0);
+	}
 	
 	
-	
-	
+	public ArrayList<Integer> getTopScores(){
+		return topScores;
+	}
+
 }
 
