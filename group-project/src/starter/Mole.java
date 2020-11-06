@@ -13,7 +13,7 @@ public class Mole{
 		}
 		Mole(SpawnPoint spawn){
 			this.spawn = spawn;
-			mole = new GImage("mole.jpg",spawn.getX(),spawn.getY());
+			mole = new GImage("mole.jpg",this.spawn.getX(),this.spawn.getY());
 		}
 		Mole(int x, int y){
 			spawn = new SpawnPoint(x,y);
