@@ -1,5 +1,5 @@
 package starter;
 
-public class standard {
+public class Standard {
 
 }
