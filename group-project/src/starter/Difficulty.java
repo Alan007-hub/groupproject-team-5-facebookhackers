@@ -7,7 +7,7 @@ public class Difficulty {
 	private String nameOfDiffculty[];
 	
 	Difficulty(){
-		difficultyLevel = 1;
+		difficultyLevel = 0;
 		nameOfDiffculty = new String[4];
 		nameOfDiffculty[0] = "Easy";
 		nameOfDiffculty[1] = "Medium";
