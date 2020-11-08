@@ -17,22 +17,22 @@ public class SpawnPoint {
 	}
 	
 //Setters and getters
-	void setX(int x) {
+	public void setX(int x) {
 		xPosition = x;
 	}
-	void setY(int y) {
+	public void setY(int y) {
 		yPosition = y;
 	}
-	int getX() {
+	public int getX() {
 		return xPosition;
 	}
-	int getY() {
+	public int getY() {
 		return yPosition;
 	}
-	int getHeight() {
+	public int getHeight() {
 		return HOLE_HEIGHT;
 	}
-	int getWidth() {
+	public int getWidth() {
 		return HOLE_WIDTH;
 	}
 }
