@@ -21,13 +21,13 @@ public class Mole{
 		}
 		
 		//Getters and Setters
-		SpawnPoint getSpawn() {
+		public SpawnPoint getSpawn() {
 			return spawn;
 		}
-		GImage getMoleImage() {
+		public GImage getMoleImage() {
 			return mole;
 		}
-		void setSpawn(SpawnPoint spawn) {
+		public void setSpawn(SpawnPoint spawn) {
 			this.spawn = spawn;
 		}
 }
