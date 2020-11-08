@@ -23,13 +23,13 @@ public class Difficulty {
 		nameOfDiffculty[3] = "Impossible";
 	}
 	
-	void setDiffcultyLevel(int value) {
+	public void setDiffcultyLevel(int value) {
 		difficultyLevel = value;
 	}
-	int getDiffcultyLevel() {
+	public int getDiffcultyLevel() {
 		return difficultyLevel;
 	}
-	String getNameOfDiffculty() {
+	public String getNameOfDiffculty() {
 		return nameOfDiffculty[difficultyLevel];
 	}
 }
