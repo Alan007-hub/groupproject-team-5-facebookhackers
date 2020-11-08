@@ -1,6 +1,6 @@
 package starter;
 
-abstract class Gamemode{
+public abstract class Gamemode{
 	private Difficulty currentDLevel;
 	private Mole molesInHoles[];
 	private boolean gameOver;
@@ -19,7 +19,7 @@ abstract class Gamemode{
 	}
 	
 	//This method will create an array of the appropriate size for the current game
-	void setupMoles(int value) {
+	public void setupMoles(int value) {
 		switch(value) {
 			case 0:
 				molesInHoles = new Mole[3];
@@ -40,12 +40,12 @@ abstract class Gamemode{
 	}
 	
 	//this method will create the appropriate spawns points for each mole
-	void setupHoles() {
+	public void setupHoles() {
 		//will do later need an idea of the window size first
 	}
 	
 	//this method will call the functions for the game
-	void playGame() {
+	public void playGame() {
 		//The game will end when gameOver = true
 		while(!gameOver) {
 			animateMoles();
@@ -53,10 +53,11 @@ abstract class Gamemode{
 	}
 	
 	//This method will determine which mole should be selected next
-	void animateMoles() {
+	public void animateMoles() {
 		
 	}
 	
-	//The following methods are abstract because ecah mode will implment them slightly differently
-	void calculate
+	//The following methods are abstract because each mode will implement them slightly differently
+	abstract void calculateScore();
+	abstract boolean endGame();
 }
