@@ -1,31 +1,43 @@
 package starter;
 
-import acm.graphics.GImage;
-
-public class MainApplication extends GraphicsApplication {
+public class MainApplication extends GraphicsApplication  {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final int WINDOW_WIDTH = 800;
 	public static final int WINDOW_HEIGHT = 600;
 	public static final String MUSIC_FOLDER = "sounds";
 	private static final String[] SOUND_FILES = { "r2d2.mp3", "somethinlikethis.mp3" };
 
-	private GImage background;
+	
 	private SomePane somePane;
 	private MenuPane menu;
 	private int count;
+	private AudioPlayer menuSong;
 
 	public void init() {
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 	}
 
-	public void run() {
-		background = new GImage("Background.jpg");
-		add(background);
+	public void run() {		
+
+		//Plays the title theme music
+		menuSong = AudioPlayer.getInstance();
+		menuSong.playSound(MUSIC_FOLDER, "menuLeaderBoard.mp3", true);
+		
+		
+
 		somePane = new SomePane(this);
 		menu = new MenuPane(this);
+
+		
 		switchToMenu();
+
 	}
 
 	public void switchToMenu() {
+		
 		playRandomSound();
 		count++;
 		switchToScreen(menu);
@@ -33,6 +45,7 @@ public class MainApplication extends GraphicsApplication {
 
 	public void switchToSome() {
 		playRandomSound();
+		menuSong.stopSound(MUSIC_FOLDER, "menuLeaderBoard.mp3");
 		switchToScreen(somePane);
 	}
 
