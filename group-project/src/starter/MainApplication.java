@@ -26,12 +26,9 @@ public class MainApplication extends GraphicsApplication  {
 		menuSong = AudioPlayer.getInstance();
 		menuSong.playSound(MUSIC_FOLDER, "menuLeaderBoard.mp3", true);
 		
-		
-
 		somePane = new SomePane(this);
 		menu = new MenuPane(this);
 
-		
 		switchToMenu();
 
 	}

@@ -15,9 +15,6 @@ public class MenuPane extends GraphicsPane {
 	Color brown = new Color (96, 40, 10);
 	Color lightBrown = new Color (235, 174, 83);
 
-	private GImage title;
-	Color green = new Color (22, 106, 11);
-
 	public MenuPane(MainApplication app) {
 		super();
 		program = app;
@@ -26,32 +23,22 @@ public class MenuPane extends GraphicsPane {
 		oval = new GButton("Play", 250, 375, 300, 200);
 		oval.setColor(brown);
 		oval.setFillColor(lightBrown);
-		oval.setFillColor(green);
-
 		
-		
-		//Title card 
-		//title = new GImage("WhackAmole.png", 60, 110);
-		
+		//Background
 		background = new GImage("Background.jpg");
 	}
 
 	@Override
 	public void showContents() {
 		program.add(background);
-		program.add(oval);
-		//program.add(title);
-		
-		
+		program.add(oval);		
 	}
 
 	@Override
 	public void hideContents() {
-		program.remove(oval);
-
-		program.removeAll();
-
 		program.remove(background);	
+		program.remove(oval);
+		program.removeAll();	
 	}
 
 	@Override
