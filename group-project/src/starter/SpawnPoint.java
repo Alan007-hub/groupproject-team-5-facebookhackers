@@ -5,11 +5,13 @@ public class SpawnPoint {
 	private int xPosition;
 	private static final int HOLE_HEIGHT = 100;
 	private static final int HOLE_WIDTH = 100;
+	
 //Default Constructor
 	SpawnPoint(){
 		yPosition = 0;
 		xPosition = 0;
 	}
+	
 //Constructor for passing two arguments
 	SpawnPoint(int x, int y){
 		xPosition = x;
