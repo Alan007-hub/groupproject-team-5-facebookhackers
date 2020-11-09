@@ -1,6 +1,5 @@
 package starter;
 
-
 public class MainApplication extends GraphicsApplication  {
 	/**
 	 * 
@@ -11,6 +10,7 @@ public class MainApplication extends GraphicsApplication  {
 	public static final String MUSIC_FOLDER = "sounds";
 	private static final String[] SOUND_FILES = { "r2d2.mp3", "somethinlikethis.mp3" };
 
+	
 	private SomePane somePane;
 	private MenuPane menu;
 	private int count;
@@ -26,6 +26,8 @@ public class MainApplication extends GraphicsApplication  {
 		menuSong = AudioPlayer.getInstance();
 		menuSong.playSound(MUSIC_FOLDER, "menuLeaderBoard.mp3", true);
 		
+		
+
 		somePane = new SomePane(this);
 		menu = new MenuPane(this);
 
