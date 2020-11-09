@@ -20,7 +20,7 @@ import acm.graphics.GOval;
 import acm.graphics.GRoundRect;
 
 public class GButton extends GCompound {
-	//private GRoundRect rect;
+
 	private GOval oval;
 	private GLabel message;
 
@@ -37,17 +37,11 @@ public class GButton extends GCompound {
 	public GButton(String label, double x, double y, double width, double height, Color col) {
 		super();
 		setLocation(x, y);
-		//r	ect = new GRoundRect(0, 0, width, height);
-		//	rect.setFilled(true);
-		//	rect.setFillColor(col);
-		//	add(rect);
-
 		oval = new GOval(0, 0, width, height);
 		oval.setFilled(true);
 		oval.setFillColor(col);
 		add(oval);
 		message = new GLabel(label);
-		message.setColor(col.white);
 		message.setFont("Brighly Crush");
 		sizeLabelFont(message, width - BUFFER, height - BUFFER);
 		double centerX = width / 2 - message.getWidth()/ 2;

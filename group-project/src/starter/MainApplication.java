@@ -8,6 +8,7 @@ public class MainApplication extends GraphicsApplication {
 	public static final String MUSIC_FOLDER = "sounds";
 	private static final String[] SOUND_FILES = { "r2d2.mp3", "somethinlikethis.mp3" };
 
+	private GImage background;
 	private SomePane somePane;
 	private MenuPane menu;
 	private int count;
@@ -17,10 +18,8 @@ public class MainApplication extends GraphicsApplication {
 	}
 
 	public void run() {
-		//System.out.println("Hello, world!");
-		GImage image = new GImage("WhackAmole.png", 60, 110);
-		add(image);
-
+		background = new GImage("Background.jpg");
+		add(background);
 		somePane = new SomePane(this);
 		menu = new MenuPane(this);
 		switchToMenu();

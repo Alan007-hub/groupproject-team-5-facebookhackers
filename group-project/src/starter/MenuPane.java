@@ -9,13 +9,15 @@ public class MenuPane extends GraphicsPane {
 	private MainApplication program; // you will use program to get access to
 										// all of the GraphicsProgram calls
 	private GButton oval;
-	Color green = new Color (22, 106, 11);
+	Color brown = new Color (96, 40, 10);
+	Color lightBrown = new Color (235, 174, 83);
 
 	public MenuPane(MainApplication app) {
 		super();
 		program = app;
 		oval = new GButton("Play", 250, 375, 300, 200);
-		oval.setFillColor(green);
+		oval.setColor(brown);
+		oval.setFillColor(lightBrown);
 	}
 
 	@Override
@@ -26,6 +28,7 @@ public class MenuPane extends GraphicsPane {
 	@Override
 	public void hideContents() {
 		program.remove(oval);
+		program.removeAll();
 	}
 
 	@Override
