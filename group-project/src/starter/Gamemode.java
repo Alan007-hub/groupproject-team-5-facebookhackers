@@ -1,6 +1,6 @@
 package starter;
 
-public class Gamemode{
+public abstract class Gamemode{
 	private Difficulty currentDLevel;
 	private Mole molesInHoles[];
 	private boolean gameOver;
@@ -58,5 +58,6 @@ public class Gamemode{
 	}
 	
 	//The following methods are abstract because each mode will implement them slightly differently
-
+	abstract void calculateScore();
+	abstract boolean endGame();
 }
