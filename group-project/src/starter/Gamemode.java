@@ -1,10 +1,49 @@
 package starter;
+import acm.graphics.*;
+import acm.program.*;
+import acm.util.*;
+import java.awt.*;
+import java.awt.event.*;
 
-public class Gamemode{
+public abstract class Gamemode extends GraphicsProgram{//made it so that we can add mouselisteners and listen to events
 	private Difficulty currentDLevel;
-	private Mole molesInHoles[];
+	private Mole molesInHoles[];//This is the number of moles to appear on screen?
 	private boolean gameOver;
 	private int score;
+	
+	public void run() {
+		addMouseListeners();
+	}
+	
+	//This method will create an array of the appropriate size for the current game
+		public void setupMoles(int value) {
+			switch(value) {
+				case 0:
+					molesInHoles = new Mole[3];
+					break;
+				case 1:
+					molesInHoles = new Mole[4];
+					break;
+				case 2:
+					molesInHoles = new Mole[6];
+					break;
+				case 3:
+					molesInHoles = new Mole[8];
+					break;
+			}
+			for(Mole moleTemp: molesInHoles) {
+				moleTemp = new Mole();
+			}
+		}
+	
+	
+	
+	
+	public void mousePressed(MouseEvent e) {
+		
+	}
+	
+	
 	
 	//Constructors for Gamemode
 	Gamemode(){
@@ -18,26 +57,7 @@ public class Gamemode{
 		score = 0;
 	}
 	
-	//This method will create an array of the appropriate size for the current game
-	public void setupMoles(int value) {
-		switch(value) {
-			case 0:
-				molesInHoles = new Mole[3];
-				break;
-			case 1:
-				molesInHoles = new Mole[4];
-				break;
-			case 2:
-				molesInHoles = new Mole[6];
-				break;
-			case 3:
-				molesInHoles = new Mole[8];
-				break;
-		}
-		for(Mole moleTemp: molesInHoles) {
-			moleTemp = new Mole();
-		}
-	}
+	
 	
 	//this method will create the appropriate spawns points for each mole
 	public void setupHoles() {
@@ -58,5 +78,6 @@ public class Gamemode{
 	}
 	
 	//The following methods are abstract because each mode will implement them slightly differently
-
+	abstract void calculateScore();
+	abstract boolean endGame();
 }
