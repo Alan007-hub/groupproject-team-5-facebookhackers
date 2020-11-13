@@ -5,16 +5,22 @@ import acm.graphics.GImage;
 public class Mole{
 		private SpawnPoint spawn;
 		private GImage mole;
+		private MainApplication program;
 		
-		//Default constructor +2 more
+		public Mole(MainApplication app) {
+			this.program = app;
+		}
+
 		Mole(){
 			spawn = new SpawnPoint();
 			mole = new GImage("mole.jpg",spawn.getX(),spawn.getY());
 		}
+		
 		Mole(SpawnPoint spawn){
 			this.spawn = spawn;
 			mole = new GImage("mole.jpg",this.spawn.getX(),this.spawn.getY());
 		}
+		
 		Mole(int x, int y){
 			spawn = new SpawnPoint(x,y);
 			mole = new GImage("mole.jpg",spawn.getX(),spawn.getY());
@@ -24,10 +30,13 @@ public class Mole{
 		public SpawnPoint getSpawn() {
 			return spawn;
 		}
+		
 		public GImage getMoleImage() {
 			return mole;
 		}
+		
 		public void setSpawn(SpawnPoint spawn) {
 			this.spawn = spawn;
 		}
+
 }
