@@ -27,7 +27,7 @@ public class MenuPane extends GraphicsPane {
 		//Background
 		background = new GImage("Background.jpg");
 	}
-
+	//test
 	@Override
 	public void showContents() {
 		program.add(background);
