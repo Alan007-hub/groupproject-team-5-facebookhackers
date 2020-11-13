@@ -36,48 +36,41 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 			}
 		}
 	
-	
-	
-	
-	public void mousePressed(MouseEvent e) {
-		
-	}
-	
-	
-	
-	//Constructors for Gamemode
-	Gamemode(){
-		currentDLevel = new Difficulty();
-		gameOver = false;
-		score = 0;
-	}
-	Gamemode(Difficulty d){
-		currentDLevel = d;
-		gameOver = false;
-		score = 0;
-	}
-	
-	
-	
-	//this method will create the appropriate spawns points for each mole
-	public void setupHoles() {
-		//will do later need an idea of the window size first
-	}
-	
-	//this method will call the functions for the game
-	public void playGame() {
-		//The game will end when gameOver = true
-		while(!gameOver) {
-			animateMoles();
+		public void mousePressed(MouseEvent e) {
+			
 		}
-	}
+
+		//Constructors for Gamemode
+		Gamemode(){
+			currentDLevel = new Difficulty();
+			gameOver = false;
+			score = 0;
+		}
+		Gamemode(Difficulty d){
+			currentDLevel = d;
+			gameOver = false;
+			score = 0;
+		}
 	
-	//This method will determine which mole should be selected next
-	public void animateMoles() {
+		//this method will create the appropriate spawns points for each mole
+		public void setupHoles() {
+			//will do later need an idea of the window size first
+		}
 		
-	}
-	
-	//The following methods are abstract because each mode will implement them slightly differently
-	abstract void calculateScore();
-	abstract boolean endGame();
+		//this method will call the functions for the game
+		public void playGame() {
+			//The game will end when gameOver = true
+			while(!gameOver) {
+				animateMoles();
+			}
+		}
+		
+		//This method will determine which mole should be selected next
+		public void animateMoles() {
+			
+		}
+		
+		//The following methods are abstract because each mode will implement them slightly differently
+		abstract void calculateScore();
+		abstract boolean endGame();
 }

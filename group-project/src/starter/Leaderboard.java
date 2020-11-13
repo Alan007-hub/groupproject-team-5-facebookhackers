@@ -14,9 +14,9 @@ public class Leaderboard {
 	private static Leaderboard board;
 	private String filePath;
 	private String highScores;
-	
 	private ArrayList<Integer> topScores;
 	
+	//constructor 
 	private Leaderboard() {
 		filePath = new File("").getAbsolutePath();
 		highScores = "Scores";
