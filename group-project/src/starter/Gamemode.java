@@ -4,15 +4,33 @@ import acm.program.*;
 import acm.util.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
+
 
 public abstract class Gamemode extends GraphicsProgram{//made it so that we can add mouselisteners and listen to events
 	private Difficulty currentDLevel;
 	private Mole molesInHoles[];//This is the number of moles to appear on screen?
 	private boolean gameOver;
 	private int score;
+	private int numberOfMoles;
+	private boolean moleWasHit;
 	
 	public void run() {
 		addMouseListeners();
+		
+	}
+	
+	public int getNumMoles() {
+		return numberOfMoles;
+	}
+	
+	public void setStatus(boolean value) {//added getters and setters for the gameover so that later
+		//it can be called by the abstract endGame method
+		gameOver=value;
+	}
+	
+	public boolean getStatus() {
+		return gameOver;
 	}
 	
 	//This method will create an array of the appropriate size for the current game
@@ -20,15 +38,19 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 			switch(value) {
 				case 0:
 					molesInHoles = new Mole[3];
+					numberOfMoles=3;
 					break;
 				case 1:
 					molesInHoles = new Mole[4];
+					numberOfMoles=4;
 					break;
 				case 2:
 					molesInHoles = new Mole[6];
+					numberOfMoles=6;
 					break;
 				case 3:
 					molesInHoles = new Mole[8];
+					numberOfMoles=8;
 					break;
 			}
 			for(Mole moleTemp: molesInHoles) {
@@ -37,7 +59,9 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 		}
 	
 		public void mousePressed(MouseEvent e) {
-			
+			if getElementAt(e.getX(),e.getY() != null) {
+				moleWasHit==true;
+			}
 		}
 
 		//Constructors for Gamemode
