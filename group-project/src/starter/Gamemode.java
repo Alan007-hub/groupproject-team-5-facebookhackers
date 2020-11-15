@@ -13,7 +13,7 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 	private boolean gameOver;
 	private int score;
 	private int numberOfMoles;
-	private boolean moleWasHit;
+	private boolean moleWasHit=false;
 	
 	public void run() {
 		addMouseListeners();
@@ -59,9 +59,7 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 		}
 	
 		public void mousePressed(MouseEvent e) {
-			if getElementAt(e.getX(),e.getY() != null) {
-				moleWasHit==true;
-			}
+			
 		}
 
 		//Constructors for Gamemode
