@@ -8,7 +8,7 @@ import java.util.Random;
 
 import javax.swing.*;
 
-
+//this class should be responsible for establishing the rules but not making the game function
 public abstract class Gamemode extends GraphicsProgram{//made it so that we can add mouselisteners and listen to events
 	private Difficulty currentDLevel;
 	private Mole molesInHoles[];//This is the number of moles to appear on screen? A)yes
