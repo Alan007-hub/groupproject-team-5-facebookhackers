@@ -12,7 +12,6 @@ public class MainApplication extends GraphicsApplication  {
 	private SomePane somePane;
 	private MenuPane menu;
 	private AudioPlayer menuSong;
-	private Mole molePane; 
 	
 
 	public void init() {
@@ -28,7 +27,6 @@ public class MainApplication extends GraphicsApplication  {
 		//Load the pages 
 		somePane = new SomePane(this);
 		menu = new MenuPane(this);
-		molePane = new Mole(this);		
 		switchToMenu();
 	}
 
