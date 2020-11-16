@@ -4,6 +4,8 @@ import acm.program.*;
 import acm.util.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Random;
+
 import javax.swing.*;
 
 
@@ -18,6 +20,18 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 	public void run() {
 		addMouseListeners();
 		
+	}
+	
+	//Constructors for Game mode
+	Gamemode(){
+		currentDLevel = new Difficulty();
+		gameOver = false;
+		score = 0;
+	}
+	Gamemode(Difficulty d){
+		currentDLevel = d;
+		gameOver = false;
+		score = 0;
 	}
 	
 	public int getNumMoles() {
@@ -62,17 +76,6 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 			
 		}
 
-		//Constructors for Game mode
-		Gamemode(){
-			currentDLevel = new Difficulty();
-			gameOver = false;
-			score = 0;
-		}
-		Gamemode(Difficulty d){
-			currentDLevel = d;
-			gameOver = false;
-			score = 0;
-		}
 	
 		//this method will create the appropriate spawns points for each mole
 		public void setupHoles() {
@@ -82,16 +85,18 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 		
 		//this method will call the functions for the game
 		public void playGame() {
+			Mole currentMole;
+			Random index = new Random();
 			//The game will end when gameOver = true
 			while(!gameOver) {
-				selectMoles();
+				/**This is an example of how we can use the number of moles without explicitly 
+				 * storing them in memory
+				*/
+				currentMole = molesInHoles[index.nextInt(molesInHoles.length)];
+				
 			}
 		}
-		
-		//This method will determine which mole should be selected next
-		public void selectMoles() {
-			
-		}
+
 		
 		//The following methods are abstract because each mode will implement them slightly differently
 		abstract void calculateScore();
