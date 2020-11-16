@@ -78,26 +78,28 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 
 	
 		//this method will create the appropriate spawns points for each mole
-		public void setupHoles() {
-			//will do later need an idea of the window size first
-			//We could try to make it dynamic with a variables that represents the width and height
+		public void setupHoles(int windowWidth, int windowHeight) {
+			
 		}
 		
 		//this method will call the functions for the game
+		//I also believe we should remove this method
+		//This class should just be in responsible for the rules 
 		public void playGame() {
-			Mole currentMole;
+			
 			Random index = new Random();
 			//The game will end when gameOver = true
 			while(!gameOver) {
 				/**This is an example of how we can use the number of moles without explicitly 
 				 * storing them in memory
 				*/
-				currentMole = molesInHoles[index.nextInt(molesInHoles.length)];
-				
+				animateMole(molesInHoles[index.nextInt(molesInHoles.length)]);
 			}
 		}
-
-		
+		//I'm not sure if the animations should be here lets discuss this on Monday
+		public void animateMole(Mole cMole) {
+			
+		}
 		//The following methods are abstract because each mode will implement them slightly differently
 		abstract void calculateScore();
 		abstract boolean endGame();
