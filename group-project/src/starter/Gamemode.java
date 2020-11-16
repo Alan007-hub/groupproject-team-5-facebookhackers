@@ -7,7 +7,7 @@ import java.awt.event.*;
 
 public abstract class Gamemode extends GraphicsProgram{//made it so that we can add mouselisteners and listen to events
 	private Difficulty currentDLevel;
-	private Mole molesInHoles[];//This is the number of moles to appear on screen?
+	private Mole molesInHoles[];//This is the number of moles to appear on screen? A)yes
 	private boolean gameOver;
 	private int score;
 	
@@ -40,7 +40,7 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 			
 		}
 
-		//Constructors for Gamemode
+		//Constructors for Game mode
 		Gamemode(){
 			currentDLevel = new Difficulty();
 			gameOver = false;
@@ -55,6 +55,7 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 		//this method will create the appropriate spawns points for each mole
 		public void setupHoles() {
 			//will do later need an idea of the window size first
+			//We could try to make it dynamic with a variables that represents the width and height
 		}
 		
 		//this method will call the functions for the game
