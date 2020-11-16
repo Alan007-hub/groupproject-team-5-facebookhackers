@@ -10,10 +10,10 @@ import javax.swing.*;
 
 //this class should be responsible for establishing the rules but not making the game function
 public abstract class Gamemode extends GraphicsProgram{//made it so that we can add mouselisteners and listen to events
-	private Difficulty currentDLevel;
-	private Mole molesInHoles[];//This is the number of moles to appear on screen? A)yes
-	private boolean gameOver;
-	private int score;
+	protected Difficulty currentDLevel;
+	protected Mole molesInHoles[];//This is the number of moles to appear on screen? A)No, its an array to hold the moles
+	protected boolean gameOver;
+	protected int score;
 	private int numberOfMoles; //This isn't necessary because the length of molesInHoles is the numberOfMoles
 	private boolean moleWasHit=false;
 	
@@ -34,6 +34,9 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 		score = 0;
 	}
 	
+	public Difficulty getDiffculty() {
+		return currentDLevel;
+	}
 	public int getNumMoles() {
 		return numberOfMoles;
 	}
