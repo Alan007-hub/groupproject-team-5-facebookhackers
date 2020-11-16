@@ -12,7 +12,7 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 	private Mole molesInHoles[];//This is the number of moles to appear on screen? A)yes
 	private boolean gameOver;
 	private int score;
-	private int numberOfMoles;
+	private int numberOfMoles; //This isn't necessary because the length of molesInHoles is the numberOfMoles
 	private boolean moleWasHit=false;
 	
 	public void run() {
@@ -84,12 +84,12 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 		public void playGame() {
 			//The game will end when gameOver = true
 			while(!gameOver) {
-				animateMoles();
+				selectMoles();
 			}
 		}
 		
 		//This method will determine which mole should be selected next
-		public void animateMoles() {
+		public void selectMoles() {
 			
 		}
 		
