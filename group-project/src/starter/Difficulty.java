@@ -5,7 +5,7 @@ package starter;
 public class Difficulty {
 	private int difficultyLevel;
 	private String nameOfDiffculty[];
-	
+	private int time;
 	Difficulty(){
 		difficultyLevel = 1;
 		nameOfDiffculty = new String[4];
@@ -13,6 +13,7 @@ public class Difficulty {
 		nameOfDiffculty[1] = "Medium";
 		nameOfDiffculty[2] = "Hard";
 		nameOfDiffculty[3] = "Impossible";
+		time = 90;
 	}
 	Difficulty(int value){
 		difficultyLevel = value;
@@ -21,6 +22,16 @@ public class Difficulty {
 		nameOfDiffculty[1] = "Medium";
 		nameOfDiffculty[2] = "Hard";
 		nameOfDiffculty[3] = "Impossible";
+		switch(value) {
+		case 1:
+			time = 90;
+			break;
+		case 2:
+			time = 75;
+			break;
+		}
+		
+		
 	}
 	
 	public void setDiffcultyLevel(int value) {
