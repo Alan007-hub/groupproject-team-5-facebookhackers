@@ -9,11 +9,10 @@ public class MainApplication extends GraphicsApplication  {
 	public static final int WINDOW_HEIGHT = 600;
 	public static final String MUSIC_FOLDER = "sounds";
 
-	private SomePane somePane;
+	private GamemodePane gamemodePane;
 	private MenuPane menu;
 	private AudioPlayer menuSong;
 	
-
 	public void init() {
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 	}
@@ -25,7 +24,7 @@ public class MainApplication extends GraphicsApplication  {
 		menuSong.playSound(MUSIC_FOLDER, "menuLeaderBoard.mp3", true);		
 		
 		//Load the pages 
-		somePane = new SomePane(this);
+		gamemodePane = new GamemodePane(this);
 		menu = new MenuPane(this);
 		switchToMenu();
 	}
@@ -36,6 +35,6 @@ public class MainApplication extends GraphicsApplication  {
 
 	public void switchToSome() {
 		menuSong.stopSound(MUSIC_FOLDER, "menuLeaderBoard.mp3");
-		switchToScreen(somePane);
+		switchToScreen(gamemodePane);
 	}
 }
