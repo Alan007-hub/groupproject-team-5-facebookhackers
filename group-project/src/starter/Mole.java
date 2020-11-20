@@ -6,13 +6,13 @@ import acm.graphics.GImage;
 public class Mole{
 		private SpawnPoint spawn;
 		private GImage mole;
-		private MainApplication program;
 		private static final int MOLE_Y_VELOCITY = 3;
 		private int timeUp;
 		
-		public Mole(MainApplication app) {
+		/*public Mole(MainApplication app) {
 			this.program = app;
-		}
+		}*/
+
 
 		Mole(){
 			spawn = new SpawnPoint();
