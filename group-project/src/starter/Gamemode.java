@@ -71,12 +71,18 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 					break;
 			}
 			for(Mole moleTemp: molesInHoles) {
-				moleTemp = new Mole();
+				moleTemp = new Mole();//did we already assign an image to this when we do this?
 			}
 		}
 	
-		public void mousePressed(MouseEvent e) {
-			
+		public void mousePressed(MouseEvent e) {//how do we connect the mole with the mouse?
+			//do we make a loop to check if we clicked on the mole for every mole in the array?
+			for (int i=0; i<molesInHoles.length; ++i ) {
+				if (getElementAt( e.getX() , e.getY() ) == molesInHoles[i].getSpawn()) {
+				
+				}
+				
+			}
 		}
 
 	
