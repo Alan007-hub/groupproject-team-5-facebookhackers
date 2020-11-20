@@ -25,7 +25,7 @@ public class GamemodePane extends GraphicsPane {
 		standard.setFont("ArcadeClassic-70");
 
 		//Survival button
-		survival = new GParagraph("Survival", 245, 500);
+		survival = new GParagraph("Survival", 260, 500);
 		survival.setColor(daarkGreen);
 		survival.setFont("ArcadeClassic-70");
 	}
