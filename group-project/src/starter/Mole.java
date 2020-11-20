@@ -34,5 +34,7 @@ public class Mole{
 		public void setSpawn(SpawnPoint spawn) {
 			this.spawn = spawn;
 		}
+		
+		
 
 }
