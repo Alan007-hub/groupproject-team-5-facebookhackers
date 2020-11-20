@@ -14,7 +14,6 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 	protected Mole molesInHoles[];//This is the number of moles to appear on screen? A)No, its an array to hold the moles
 	protected boolean gameOver;
 	protected int score;
-	private int numberOfMoles; //This isn't necessary because the length of molesInHoles is the numberOfMoles
 	private boolean moleWasHit=false;
 	
 	public void run() {
@@ -37,9 +36,6 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 	public Difficulty getDiffculty() {
 		return currentDLevel;
 	}
-	public int getNumMoles() {
-		return numberOfMoles;
-	}
 	
 	public void setStatus(boolean value) {	//added getters and setters for the game over so that later
 		gameOver = value;						//it can be called by the abstract endGame method
@@ -55,19 +51,15 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 			switch(value) {
 				case 0:
 					molesInHoles = new Mole[3];
-					numberOfMoles=3;
 					break;
 				case 1:
 					molesInHoles = new Mole[4];
-					numberOfMoles=4;
 					break;
 				case 2:
 					molesInHoles = new Mole[6];
-					numberOfMoles=6;
 					break;
 				case 3:
 					molesInHoles = new Mole[8];
-					numberOfMoles=8;
 					break;
 			}
 			for(Mole moleTemp: molesInHoles) {
@@ -77,11 +69,11 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 	
 		public void mousePressed(MouseEvent e) {//how do we connect the mole with the mouse?
 			//do we make a loop to check if we clicked on the mole for every mole in the array?
-			for (int i=0; i<molesInHoles.length; ++i ) {
+			for (int i=0; i < molesInHoles.length; i++ ) {
 				if (getElementAt( e.getX() , e.getY() ) == molesInHoles[i].getMoleImage()) {
-				
+					calculateScore();
+					i = molesInHoles.length;
 				}
-				
 			}
 		}
 
