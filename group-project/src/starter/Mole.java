@@ -6,6 +6,11 @@ public class Mole{
 		private SpawnPoint spawn;
 		private GImage mole;
 		private static final int MOLE_Y_VELOCITY = 3;
+		
+		/*public Mole(MainApplication app) {
+			this.program = app;
+		}*/
+
 
 		Mole(){
 			spawn = new SpawnPoint();

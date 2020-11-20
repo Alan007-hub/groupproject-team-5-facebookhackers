@@ -12,6 +12,7 @@ public class MainApplication extends GraphicsApplication  {
 	private GamemodePane gamemodePane;
 	private MenuPane menu;
 	private AudioPlayer menuSong;
+	private Mole molePane; 
 	
 	public void init() {
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -26,6 +27,7 @@ public class MainApplication extends GraphicsApplication  {
 		//Load the pages 
 		gamemodePane = new GamemodePane(this);
 		menu = new MenuPane(this);
+		molePane = new Mole(this);		
 		switchToMenu();
 	}
 
