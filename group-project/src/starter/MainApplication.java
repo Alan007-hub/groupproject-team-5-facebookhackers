@@ -12,7 +12,7 @@ public class MainApplication extends GraphicsApplication  {
 	private GamemodePane gamemodePane;
 	private MenuPane menu;
 	private AudioPlayer menuSong;
-	private Mole molePane; 
+	//private Mole molePane; 
 	
 	public void init() {
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -27,7 +27,7 @@ public class MainApplication extends GraphicsApplication  {
 		//Load the pages 
 		gamemodePane = new GamemodePane(this);
 		menu = new MenuPane(this);
-		molePane = new Mole(this);		
+		//molePane = new Mole(this);		
 		switchToMenu();
 	}
 
@@ -36,7 +36,6 @@ public class MainApplication extends GraphicsApplication  {
 	}
 
 	public void switchToSome() {
-		menuSong.stopSound(MUSIC_FOLDER, "menuLeaderBoard.mp3");
 		switchToScreen(gamemodePane);
 	}
 }

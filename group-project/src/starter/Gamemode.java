@@ -37,9 +37,9 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 		return currentDLevel;
 	}
 	
-	public void setStatus(boolean value) {//added getters and setters for the gameover so that later
-		//it can be called by the abstract endGame method
-		gameOver=value;
+	public void setStatus(boolean value) {	//added getters and setters for the game over so that later
+		gameOver = value;						//it can be called by the abstract endGame method
+		
 	}
 	
 	public boolean getStatus() {

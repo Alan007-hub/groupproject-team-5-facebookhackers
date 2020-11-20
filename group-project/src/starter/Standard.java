@@ -14,4 +14,10 @@ public class Standard extends Gamemode {
 		return getStatus();
 	}
 
+	@Override
+	void calculateScore() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
