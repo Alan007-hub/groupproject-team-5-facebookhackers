@@ -1,13 +1,11 @@
 package starter;
 
-import javax.swing.Timer;
 import acm.graphics.GImage;
 
 public class Mole{
 		private SpawnPoint spawn;
 		private GImage mole;
 		private static final int MOLE_Y_VELOCITY = 3;
-		private int timeUp;
 		
 		/*public Mole(MainApplication app) {
 			this.program = app;
@@ -41,6 +39,5 @@ public class Mole{
 		public void setSpawn(SpawnPoint spawn) {
 			this.spawn = spawn;
 		}
-
 
 }
