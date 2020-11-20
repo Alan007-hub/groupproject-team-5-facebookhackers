@@ -78,13 +78,47 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 		}
 
 	
-		//this method will create the appropriate spawns points for each mole
+		//this method will assign the x and y coordinates for each spawns point
 		public void setupHoles(int windowWidth, int windowHeight) {
 			int x = windowWidth;
-			int y = windowHeight * (2/3); // estimates may need to change later
+			
+			//The y position for the middle row of holes
+			int y = windowHeight * (3/4); // estimates may need to change later
+			
+			//At a minimum we will need 3 holes. We always create the first 3 in the middle row.
 			for(int i = 1; i <= 3; i++) {
 				x = x * (i/3);
 				molesInHoles[i-1].setSpawn(new SpawnPoint(x, y));
+			}
+			
+			//Now if easy is selected we will only need 4 holes but if Hard is selected we will need 6.
+			//If statement determines if we have at least 4 moles
+			if(molesInHoles.length >= 4) {
+				x = windowWidth;
+				
+				//The y position for the bottom row of holes
+				y = windowHeight * (4/5);// estimates may need to change later
+				for(int i = 1; i <= 3; i++) {
+					x = x * (i/3);
+					molesInHoles[i+2].setSpawn(new SpawnPoint(x, y));
+				
+					//if we only have 4 holes then we stop the for loop after one iteration
+					if(molesInHoles.length == 4) {
+						i = 4;
+					}
+				}
+			}
+			//All that is left is to generate the final row of holes if necessary (TOP ROW)
+			if(molesInHoles.length > 6) {
+				x = windowWidth;
+				
+				//The y position for the top row of holes
+				y = windowHeight * (2/3);// estimates may need to change later
+				
+				for(int i = 1; i <= 3; i++) {
+					x = x * (i/3);
+					molesInHoles[i+5].setSpawn(new SpawnPoint(x, y));
+				}
 			}
 			
 		}
