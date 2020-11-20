@@ -59,7 +59,7 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 					molesInHoles = new Mole[6];
 					break;
 				case 3:
-					molesInHoles = new Mole[8];
+					molesInHoles = new Mole[9];
 					break;
 			}
 			for(Mole moleTemp: molesInHoles) {
@@ -80,6 +80,12 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 	
 		//this method will create the appropriate spawns points for each mole
 		public void setupHoles(int windowWidth, int windowHeight) {
+			int x = windowWidth;
+			int y = windowHeight * (2/3); // estimates may need to change later
+			for(int i = 1; i <= 3; i++) {
+				x = x * (i/3);
+				molesInHoles[i-1].setSpawn(new SpawnPoint(x, y));
+			}
 			
 		}
 		
