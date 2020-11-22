@@ -12,8 +12,9 @@ public class MainApplication extends GraphicsApplication  {
 	private GamemodePane gamemodePane;
 	private MenuPane menu;
 	private AudioPlayer menuSong;
+	private DifficultyPane difficulty;
 	//private Mole molePane; 
-	
+
 	public void init() {
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 	}
@@ -23,16 +24,22 @@ public class MainApplication extends GraphicsApplication  {
 		//Plays the title theme music
 		menuSong = AudioPlayer.getInstance();
 		menuSong.playSound(MUSIC_FOLDER, "menuLeaderBoard.mp3", true);		
-		
+
 		//Load the pages 
-		gamemodePane = new GamemodePane(this);
 		menu = new MenuPane(this);
-		//molePane = new Mole(this);		
+		gamemodePane = new GamemodePane(this);
+		difficulty = new DifficultyPane(this);
+		//molePane = new Mole(this);	
+		switchToDifficulty();
 		switchToMenu();
 	}
 
 	public void switchToMenu() {
 		switchToScreen(menu);
+	}
+
+	public void switchToDifficulty() {
+		switchToScreen(difficulty);
 	}
 
 	public void switchToSome() {
