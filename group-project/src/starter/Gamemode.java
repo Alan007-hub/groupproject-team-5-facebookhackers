@@ -73,6 +73,7 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 				if (getElementAt( e.getX() , e.getY() ) == molesInHoles[i].getMoleImage()) {
 					calculateScore();
 					i = molesInHoles.length;
+					//may need to consider animations here
 				}
 			}
 		}
@@ -127,20 +128,17 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 		//I also believe we should remove this method
 		//This class should just be in responsible for the rules 
 		public void playGame() {
-			
 			Random index = new Random();
 			//The game will end when gameOver = true
 			while(!gameOver) {
 				/**This is an example of how we can use the number of moles without explicitly 
 				 * storing them in memory
 				*/
-				animateMole(molesInHoles[index.nextInt(molesInHoles.length)]);
+				int temp = index.nextInt(molesInHoles.length);
+				molesInHoles[temp].animate();
 			}
 		}
-		//I'm not sure if the animations should be here lets discuss this on Monday
-		public void animateMole(Mole cMole) {
-			
-		}
+		
 		//The following methods are abstract because each mode will implement them slightly differently
 		abstract void calculateScore();
 		abstract boolean endGame();
