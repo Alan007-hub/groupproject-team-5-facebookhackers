@@ -14,17 +14,17 @@ public class Mole{
 
 		Mole(){
 			spawn = new SpawnPoint();
-			mole = new GImage("mole.jpg",spawn.getX(),spawn.getY());
+			mole = new GImage("mole.png",spawn.getX(),spawn.getY());
 		}
 		
 		Mole(SpawnPoint spawn){
 			this.spawn = spawn;
-			mole = new GImage("mole.jpg",this.spawn.getX(),this.spawn.getY());
+			mole = new GImage("mole.png",this.spawn.getX(),this.spawn.getY());
 		}
 		
 		Mole(int x, int y){
 			spawn = new SpawnPoint(x,y);
-			mole = new GImage("mole.jpg",spawn.getX(),spawn.getY());
+			mole = new GImage("mole.png",spawn.getX(),spawn.getY());
 		}
 		
 		//Getters and Setters
