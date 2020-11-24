@@ -2,15 +2,27 @@ package starter;
 
 import acm.graphics.GImage;
 
-public class Mole{
+public class Mole extends GraphicsPane{
 		private SpawnPoint spawn;
 		private GImage mole;
-		private static final int MOLE_Y_VELOCITY = 3;
-		
-		/*public Mole(MainApplication app) {
-			this.program = app;
-		}*/
+		private MainApplication program;
+		private GImage background = new GImage("LevelBG.jpg");
 
+		
+		public Mole(MainApplication app) {
+			this.program = app;
+		}
+		
+		@Override
+		public void showContents() {
+			program.add(background);
+		}
+
+		@Override
+		public void hideContents() {
+			program.remove(background);
+		}
+		
 
 		Mole(){
 			spawn = new SpawnPoint();

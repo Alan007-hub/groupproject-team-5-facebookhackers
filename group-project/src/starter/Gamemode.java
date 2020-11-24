@@ -134,8 +134,8 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 				/**This is an example of how we can use the number of moles without explicitly 
 				 * storing them in memory
 				*/
-				int temp = index.nextInt(molesInHoles.length);
-				molesInHoles[temp].animate();
+//				int temp = index.nextInt(molesInHoles.length);
+//				molesInHoles[temp].animate();
 			}
 		}
 		

@@ -13,7 +13,7 @@ public class MainApplication extends GraphicsApplication  {
 	private MenuPane menu;
 	private AudioPlayer menuSong;
 	private DifficultyPane difficulty;
-	//private Mole molePane; 
+	private Mole molePane; 
 
 	public void init() {
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -29,9 +29,11 @@ public class MainApplication extends GraphicsApplication  {
 		menu = new MenuPane(this);
 		gamemodePane = new GamemodePane(this);
 		difficulty = new DifficultyPane(this);
-		//molePane = new Mole(this);	
-		switchToDifficulty();
-		switchToMenu();
+		molePane = new Mole(this);	
+		
+		//Switched the first call to the mole page for now
+		//As i work on implementing the moles to show up on screen
+		switchToMole();	
 	}
 
 	public void switchToMenu() {
@@ -44,5 +46,9 @@ public class MainApplication extends GraphicsApplication  {
 
 	public void switchToSome() {
 		switchToScreen(gamemodePane);
+	}
+	
+	public void switchToMole() {
+		switchToScreen(molePane);
 	}
 }
