@@ -1,8 +1,9 @@
 package starter;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import acm.graphics.GImage;
 
-public class Mole extends GraphicsPane{
+public class Mole extends GraphicsPane implements ActionListener{
 		private SpawnPoint spawn;
 		private GImage mole;
 		private MainApplication program;
@@ -22,7 +23,10 @@ public class Mole extends GraphicsPane{
 		public void hideContents() {
 			program.remove(background);
 		}
-		
+	
+		public void actionPerformed(ActionEvent e){
+			
+		}
 
 		Mole(){
 			spawn = new SpawnPoint();
