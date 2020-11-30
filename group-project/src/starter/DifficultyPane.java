@@ -14,7 +14,7 @@ public class DifficultyPane extends GraphicsPane {
 	private GParagraph hard;
 	private GParagraph impossible;
 
-	Color daarkGreen = new Color (32, 40, 2);
+	Color darkGreen = new Color (32, 40, 2);
 
 	public DifficultyPane(MainApplication app) {
 		this.program = app;
@@ -22,22 +22,22 @@ public class DifficultyPane extends GraphicsPane {
 
 		//Easy button 
 		easy = new GParagraph("Easy", 320, 150);
-		easy.setColor(daarkGreen);
+		easy.setColor(darkGreen);
 		easy.setFont("ArcadeClassic-70");
 
 		//Medium button
 		medium = new GParagraph("Medium", 275, 260);
-		medium.setColor(daarkGreen);
+		medium.setColor(darkGreen);
 		medium.setFont("ArcadeClassic-70");
 
 		//Hard button
 		hard = new GParagraph("Hard", 320, 380);
-		hard.setColor(daarkGreen);
+		hard.setColor(darkGreen);
 		hard.setFont("ArcadeClassic-70");
 
 		//Impossible button
 		impossible = new GParagraph("Impossible", 270, 495);
-		impossible.setColor(daarkGreen);
+		impossible.setColor(darkGreen);
 		impossible.setFont("ArcadeClassic-44");
 	}
 
