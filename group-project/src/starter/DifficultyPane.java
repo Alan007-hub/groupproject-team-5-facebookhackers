@@ -13,6 +13,8 @@ public class DifficultyPane extends GraphicsPane {
 	private GParagraph medium;
 	private GParagraph hard;
 	private GParagraph impossible;
+	
+	private Difficulty currentDifficulty;
 
 	Color darkGreen = new Color (32, 40, 2);
 
@@ -64,12 +66,16 @@ public class DifficultyPane extends GraphicsPane {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == easy) {
 			program.switchToSome();
+			currentDifficulty = new Difficulty(0);
 		}else if (obj == medium) {
 			program.switchToSome();
+			currentDifficulty = new Difficulty(1);
 		}else if (obj == hard) {
 			program.switchToSome();
+			currentDifficulty = new Difficulty(2);
 		}else if (obj == impossible) {
 			program.switchToSome();
+			currentDifficulty = new Difficulty(3);
 		}
 	}
 }
