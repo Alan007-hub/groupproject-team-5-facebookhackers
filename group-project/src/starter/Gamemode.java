@@ -14,7 +14,7 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 	protected Mole molesInHoles[];//This is the number of moles to appear on screen? A)No, its an array to hold the moles
 	protected boolean gameOver;
 	protected int score;
-	private boolean moleWasHit=false;
+	protected boolean moleWasHit;
 	
 	public void run() {
 		addMouseListeners();
@@ -24,13 +24,15 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 	//Constructors for Game mode
 	Gamemode(){
 		currentDLevel = new Difficulty();
-		gameOver = false;
 		score = 0;
+		gameOver = false;
+		moleWasHit = false;
 	}
 	Gamemode(Difficulty d){
 		currentDLevel = d;
-		gameOver = false;
 		score = 0;
+		gameOver = false;
+		moleWasHit = false;
 	}
 	
 	public Difficulty getDiffculty() {
@@ -39,7 +41,6 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 	
 	public void setStatus(boolean value) {	//added getters and setters for the game over so that later
 		gameOver = value;						//it can be called by the abstract endGame method
-		
 	}
 	
 	public boolean getStatus() {
@@ -124,6 +125,7 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 			
 		}
 		
+		//This method will randomly select
 		//this method will call the functions for the game
 		//I also believe we should remove this method
 		//This class should just be in responsible for the rules 
