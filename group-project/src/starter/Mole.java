@@ -1,5 +1,6 @@
 package starter;
 import java.awt.event.ActionEvent;
+import javax.swing.Timer;
 import java.awt.event.ActionListener;
 import acm.graphics.GImage;
 
@@ -8,6 +9,7 @@ public class Mole extends GraphicsPane implements ActionListener{
 		private GImage mole;
 		private MainApplication program;
 		private GImage background = new GImage("LevelBG.jpg");
+		private Timer movementTimer;
 
 		
 		public Mole(MainApplication app) {
@@ -17,6 +19,7 @@ public class Mole extends GraphicsPane implements ActionListener{
 		@Override
 		public void showContents() {
 			program.add(background);
+			
 		}
 
 		@Override
