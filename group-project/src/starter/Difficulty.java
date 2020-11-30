@@ -27,16 +27,16 @@ public class Difficulty {
 		switch(value) {
 		//Isn't this suppose to be related to the name of the Difficulty array?
 		//If so, we need to add two more ?
-		case 1:
+		case 0:
 			time = 90;
 			break;
-		case 2:
+		case 1:
 			time = 75;
 			break;
-		case 3:
+		case 2:
 			time = 60;
 			break;
-		case 4:
+		case 3:
 			time = 45;
 			break;	
 		}		
