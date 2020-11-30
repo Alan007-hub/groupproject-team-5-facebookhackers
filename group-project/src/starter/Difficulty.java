@@ -6,6 +6,7 @@ public class Difficulty {
 	private int difficultyLevel;
 	private String nameOfDiffculty[];
 	private int time;
+	
 	Difficulty(){
 		difficultyLevel = 0;
 		nameOfDiffculty = new String[4];
@@ -26,7 +27,6 @@ public class Difficulty {
 		switch(value) {
 		//Isn't this suppose to be related to the name of the Difficulty array?
 		//If so, we need to add two more ?
-		
 		case 1:
 			time = 90;
 			break;
@@ -35,12 +35,11 @@ public class Difficulty {
 			break;
 		case 3:
 			time = 60;
+			break;
 		case 4:
 			time = 45;
-			
-		}
-		
-		
+			break;	
+		}		
 	}
 	
 	public void setDiffcultyLevel(int value) {
