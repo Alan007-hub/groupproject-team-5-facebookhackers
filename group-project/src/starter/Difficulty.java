@@ -33,6 +33,11 @@ public class Difficulty {
 		case 2:
 			time = 75;
 			break;
+		case 3:
+			time = 60;
+		case 4:
+			time = 45;
+			
 		}
 		
 		
