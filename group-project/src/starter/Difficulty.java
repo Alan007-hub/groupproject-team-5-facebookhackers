@@ -22,7 +22,11 @@ public class Difficulty {
 		nameOfDiffculty[1] = "Medium";
 		nameOfDiffculty[2] = "Hard";
 		nameOfDiffculty[3] = "Impossible";
+		
 		switch(value) {
+		//Isn't this suppose to be related to the name of the Difficulty array?
+		//If so, we need to add two more ?
+		
 		case 1:
 			time = 90;
 			break;
