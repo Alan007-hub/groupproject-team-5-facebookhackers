@@ -32,6 +32,8 @@ public class MainApplication extends GraphicsApplication  {
 		molePane = new Mole(this);	
 		
 		switchToMenu();
+		
+		Difficulty cDifficulty = difficulty.getCurrentD();
 	}
 
 	public void switchToMenu() {

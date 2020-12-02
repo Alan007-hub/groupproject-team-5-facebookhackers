@@ -60,6 +60,10 @@ public class DifficultyPane extends GraphicsPane {
 		program.remove(hard);
 		program.remove(impossible);
 	}
+	
+	public Difficulty getCurrentD() {
+		return currentDifficulty;
+	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
