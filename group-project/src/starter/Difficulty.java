@@ -42,6 +42,12 @@ public class Difficulty {
 		}		
 	}
 	
+	//Created the getTimer() in order to get the timer value so we can check if we can end the game
+	public int getTimer() {
+		return time;
+		}
+	
+	
 	public void setDiffcultyLevel(int value) {
 		difficultyLevel = value;
 	}
