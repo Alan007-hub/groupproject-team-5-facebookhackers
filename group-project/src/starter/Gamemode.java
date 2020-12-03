@@ -48,7 +48,7 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 	}
 	
 	//This method will create an array of the appropriate size for the current game
-		public void setupMoles(int value) {
+	public void setupMoles(int value) {
 			switch(value) {
 				case 0:
 					molesInHoles = new Mole[3];

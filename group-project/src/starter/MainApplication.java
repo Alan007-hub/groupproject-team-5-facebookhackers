@@ -31,9 +31,9 @@ public class MainApplication extends GraphicsApplication  {
 		difficulty = new DifficultyPane(this);
 		molePane = new Mole(this);	
 		
-		//Switched the first call to the mole page for now
-		//As i work on implementing the moles to show up on screen
-		switchToMole();	
+		switchToMenu();
+		
+		Difficulty cDifficulty = difficulty.getCurrentD();
 	}
 
 	public void switchToMenu() {
