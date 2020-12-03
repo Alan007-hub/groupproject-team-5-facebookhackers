@@ -20,8 +20,12 @@ public class Standard extends Gamemode {
 	}
 	
 	
-	boolean endGame() {//game ends when the timer reaches zero
+	boolean endGame() {
+		/**In standard, game should end when the timer reaches zero,
+		 and there should be a setStatus()? so that we could set the gameover to true*/
 
+		
+		
 		return getStatus();
 	}
 
