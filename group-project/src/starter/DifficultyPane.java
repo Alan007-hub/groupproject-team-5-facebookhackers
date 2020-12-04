@@ -9,10 +9,10 @@ import acm.graphics.GObject;
 public class DifficultyPane extends GraphicsPane {
 	private MainApplication program;
 	private GImage img;
-	private GParagraph easy;
-	private GParagraph medium;
-	private GParagraph hard;
-	private GParagraph impossible;
+	private GImage easy;
+	private GImage medium;
+	private GImage hard;
+	private GImage impossible;
 	
 	private Difficulty currentDifficulty;
 
@@ -23,24 +23,16 @@ public class DifficultyPane extends GraphicsPane {
 		img = new GImage("Difficulty.jpg");
 
 		//Easy button 
-		easy = new GParagraph("Easy", 320, 150);
-		easy.setColor(darkGreen);
-		easy.setFont("ArcadeClassic-70");
+		easy = new GImage("Easy.png", 320, 105);
 
 		//Medium button
-		medium = new GParagraph("Medium", 275, 260);
-		medium.setColor(darkGreen);
-		medium.setFont("ArcadeClassic-70");
+		medium = new GImage("Medium.png", 288, 224);
 
 		//Hard button
-		hard = new GParagraph("Hard", 320, 380);
-		hard.setColor(darkGreen);
-		hard.setFont("ArcadeClassic-70");
+		hard = new GImage("Hard.png", 320, 340);
 
 		//Impossible button
-		impossible = new GParagraph("Impossible", 270, 495);
-		impossible.setColor(darkGreen);
-		impossible.setFont("ArcadeClassic-44");
+		impossible = new GImage("Impossible.png", 268, 472);
 	}
 
 	@Override
