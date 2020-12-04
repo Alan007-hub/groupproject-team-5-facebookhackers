@@ -15,6 +15,7 @@ public class MainApplication extends GraphicsApplication  {
 	private DifficultyPane difficulty;
 	private Mole molePane; 
 	private Difficulty cDifficulty;
+	private LeaderboardPane leaderboard;
 	private Gamemode cGamemode;
 	public void init() {
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -28,6 +29,7 @@ public class MainApplication extends GraphicsApplication  {
 
 		//Load the pages 
 		menu = new MenuPane(this);
+		leaderboard = new LeaderboardPane(this);
 		difficulty = new DifficultyPane(this);
 		
 		//I, Michael, Placed this here because it made sense to place it before gamemodePane
@@ -39,9 +41,7 @@ public class MainApplication extends GraphicsApplication  {
 		
 		molePane = new Mole(this);	
 		
-		switchToMenu();
-		
-		
+		switchToMenu();		
 	}
 
 	public void switchToMenu() {
@@ -58,5 +58,9 @@ public class MainApplication extends GraphicsApplication  {
 	
 	public void switchToMole() {
 		switchToScreen(molePane);
+	}
+	
+	public void switchToLeaderboard() {
+		switchToScreen(leaderboard);
 	}
 }
