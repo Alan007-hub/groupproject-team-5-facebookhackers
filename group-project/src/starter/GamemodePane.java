@@ -10,8 +10,8 @@ public class GamemodePane extends GraphicsPane {
 	private MainApplication program; // you will use program to get access to
 	// all of the GraphicsProgram calls
 	private GImage img;
-	private GParagraph standard;
-	private GParagraph survival;
+	private GImage standard;
+	private GImage survival;
 	private Difficulty cDiff;
 	private Gamemode cGamemode;
 	
@@ -26,15 +26,11 @@ public class GamemodePane extends GraphicsPane {
 		this.cDiff = cDiff;
 		img = new GImage("Gamemode.jpg");
 
-		//Standard button 
-		standard = new GParagraph("Standard", 245, 345);
-		standard.setColor(daarkGreen);
-		standard.setFont("ArcadeClassic-70");
+		//Standard button
+		standard = new GImage("Standard.png", 250, 300);
 
 		//Survival button
-		survival = new GParagraph("Survival", 245, 500);
-		survival.setColor(daarkGreen);
-		survival.setFont("ArcadeClassic-70");
+		survival = new GImage("Survival.png", 250, 455);
 	}
 
 	@Override

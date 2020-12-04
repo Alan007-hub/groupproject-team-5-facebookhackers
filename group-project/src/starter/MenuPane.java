@@ -10,7 +10,8 @@ public class MenuPane extends GraphicsPane {
 	private MainApplication program; // you will use program to get access to
 	// all of the GraphicsProgram calls
 	private GImage background;
-	private GButton oval;
+	private GImage play;
+	private GImage playButton;
 	private GButton circle;
 	private GImage leaderboard;
 
@@ -25,9 +26,8 @@ public class MenuPane extends GraphicsPane {
 		background = new GImage("Background.jpg");
 
 		//Hit play button
-		oval = new GButton("Play", 250, 375, 300, 200);
-		oval.setColor(brown);
-		oval.setFillColor(lightBrown);
+		play = new GImage ("Play.png",309, 419);
+		playButton = new GImage ("PlayButton.png",235, 372);
 
 		//Hit leaderBoard button
 		circle = new GButton("", 17, 10, 90,90);
@@ -39,26 +39,25 @@ public class MenuPane extends GraphicsPane {
 	@Override
 	public void showContents() {
 		program.add(background);
-		program.add(oval);
+		program.add(playButton);
+		program.add(play);
 		program.add(circle);
 		program.add(leaderboard);
 	}
 
 	@Override
 	public void hideContents() {
-		program.remove(oval);
-		program.removeAll();
 		program.remove(background);	
-		program.remove(oval);
+		program.remove(play);
+		program.remove(playButton);
 		program.remove(circle);
-		program.remove(leaderboard);
-		program.removeAll();	
+		program.remove(leaderboard);	
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
-		if (obj == oval) {
+		if (obj == play || obj == playButton) {
 			program.switchToSome();
 		}else if(obj == circle || obj == leaderboard){
 			program.switchToLeaderboard();
