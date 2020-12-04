@@ -39,7 +39,7 @@ public class MainApplication extends GraphicsApplication  {
 		
 		cGamemode = gamemodePane.getGamemode();
 		
-		molePane = new Mole(this);	
+		molePane = new MolePane(this, cGamemode);	
 		
 		switchToMenu();		
 	}
