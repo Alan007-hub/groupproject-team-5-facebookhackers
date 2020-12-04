@@ -13,7 +13,7 @@ public class MainApplication extends GraphicsApplication  {
 	private MenuPane menu;
 	private AudioPlayer menuSong;
 	private DifficultyPane difficulty;
-	private Mole molePane; 
+	private MolePane molePane; 
 	private Difficulty cDifficulty;
 	private LeaderboardPane leaderboard;
 	private Gamemode cGamemode;
