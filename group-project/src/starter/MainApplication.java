@@ -13,7 +13,6 @@ public class MainApplication extends GraphicsApplication  {
 	private MenuPane menu;
 	private AudioPlayer menuSong;
 	private DifficultyPane difficulty;
-	private Mole molePane; 
 	private MolePane mole;
 	private Difficulty cDifficulty;
 	private LeaderboardPane leaderboard;
@@ -41,8 +40,6 @@ public class MainApplication extends GraphicsApplication  {
 		
 		cGamemode = gamemode.getGamemode();
 		
-		molePane = new Mole(this);	
-		
 		switchToMenu();		
 	}
 
@@ -56,10 +53,6 @@ public class MainApplication extends GraphicsApplication  {
 
 	public void switchToSome() {
 		switchToScreen(gamemode);
-	}
-	
-	public void switchToMole() {
-		switchToScreen(molePane);
 	}
 	
 	public void switchToLeaderboard() {
