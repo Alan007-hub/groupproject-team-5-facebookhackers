@@ -1,5 +1,7 @@
 package starter;
+import java.lang.*;
 
-public class Survival {
+public class Survival extends Gamemode{
 
+	
 }
