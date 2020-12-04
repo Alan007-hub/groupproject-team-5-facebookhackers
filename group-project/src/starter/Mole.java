@@ -2,6 +2,8 @@ package starter;
 import java.awt.event.ActionEvent;
 import javax.swing.Timer;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+
 import acm.graphics.GImage;
 
 public class Mole implements ActionListener{
@@ -17,7 +19,14 @@ public class Mole implements ActionListener{
 				count++;
 			}
 		}
-
+		
+		public void mousePressed(MouseEvent e) {
+			movementTimer.stop();
+			count = 0;
+			while(mole.getY() != spawn.getY()) {
+				mole.setLocation(mole.getX(), mole.getY() - 2);
+			}
+		}
 		Mole(){
 			spawn = new SpawnPoint();
 			mole = new GImage("mole.png",spawn.getX(),spawn.getY());
