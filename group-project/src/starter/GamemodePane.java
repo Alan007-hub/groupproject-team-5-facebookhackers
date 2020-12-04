@@ -12,11 +12,18 @@ public class GamemodePane extends GraphicsPane {
 	private GImage img;
 	private GParagraph standard;
 	private GParagraph survival;
-
+	private Difficulty cDiff;
+	private Gamemode cGamemode;
+	
 	Color daarkGreen = new Color (32, 40, 2);
+	
+	public Gamemode getGamemode() {
+		return cGamemode;
+	}
 
-	public GamemodePane(MainApplication app) {
+	public GamemodePane(MainApplication app, Difficulty cDiff) {
 		this.program = app;
+		this.cDiff = cDiff;
 		img = new GImage("Gamemode.jpg");
 
 		//Standard button 
@@ -49,6 +56,7 @@ public class GamemodePane extends GraphicsPane {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == standard) {
 			program.switchToDifficulty();
+			cGamemode = new Standard(cDiff);
 		}else if (obj == survival) {
 			program.switchToDifficulty();
 		}
