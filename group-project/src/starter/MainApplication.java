@@ -9,11 +9,11 @@ public class MainApplication extends GraphicsApplication  {
 	public static final int WINDOW_HEIGHT = 600;
 	public static final String MUSIC_FOLDER = "sounds";
 
-	private GamemodePane gamemode;
+	private GamemodePane gamemodePane;
 	private MenuPane menu;
 	private AudioPlayer menuSong;
 	private DifficultyPane difficulty;
-	private MolePane mole;
+	private MolePane molePane; 
 	private Difficulty cDifficulty;
 	private LeaderboardPane leaderboard;
 	private Gamemode cGamemode;
@@ -31,14 +31,15 @@ public class MainApplication extends GraphicsApplication  {
 		menu = new MenuPane(this);
 		leaderboard = new LeaderboardPane(this);
 		difficulty = new DifficultyPane(this);
-		mole = new MolePane(this);
 		
 		//I, Michael, Placed this here because it made sense to place it before gamemodePane
 		cDifficulty = difficulty.getCurrentD();
 		
-		gamemode = new GamemodePane(this, cDifficulty);
+		gamemodePane = new GamemodePane(this, cDifficulty);
 		
-		cGamemode = gamemode.getGamemode();
+		cGamemode = gamemodePane.getGamemode();
+		
+		molePane = new MolePane(this, cGamemode);	
 		
 		switchToMenu();		
 	}
@@ -52,14 +53,14 @@ public class MainApplication extends GraphicsApplication  {
 	}
 
 	public void switchToSome() {
-		switchToScreen(gamemode);
+		switchToScreen(gamemodePane);
+	}
+	
+	public void switchToMole() {
+		switchToScreen(molePane);
 	}
 	
 	public void switchToLeaderboard() {
 		switchToScreen(leaderboard);
-	}
-	
-	public void switchToMolePane() {
-		switchToScreen(mole);
 	}
 }
