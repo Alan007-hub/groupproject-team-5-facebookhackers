@@ -142,5 +142,5 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 		
 		//The following methods are abstract because each mode will implement them slightly differently
 		abstract void calculateScore();
-		abstract boolean endGame();
+		abstract boolean endGame();//This is to end the game right?
 }
