@@ -27,6 +27,7 @@ public class Mole implements ActionListener{
 				mole.setLocation(mole.getX(), mole.getY() - 2);
 			}
 		}
+		
 		Mole(){
 			spawn = new SpawnPoint();
 			mole = new GImage("mole.png",spawn.getX(),spawn.getY());
@@ -53,8 +54,6 @@ public class Mole implements ActionListener{
 		
 		public void setSpawn(SpawnPoint spawn) {
 			this.spawn = spawn;
-		}
-		
-		
+		}		
 
 }

@@ -32,10 +32,9 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 		currentDLevel = d;
 		score = 0;
 		gameOver = false;
-		moleWasHit = false;
 	}
 	
-	public Difficulty getDiffculty() {
+	public Difficulty getDifficulty() {
 		return currentDLevel;
 	}
 	

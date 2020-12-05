@@ -48,13 +48,13 @@ public class Difficulty {
 		}
 	
 	
-	public void setDiffcultyLevel(int value) {
+	public void setDifficultyLevel(int value) {
 		difficultyLevel = value;
 	}
-	public int getDiffcultyLevel() {
+	public int getDifficultyLevel() {
 		return difficultyLevel;
 	}
-	public String getNameOfDiffculty() {
+	public String getNameOfDifficulty() {
 		return nameOfDiffculty[difficultyLevel];
 	}
 }
