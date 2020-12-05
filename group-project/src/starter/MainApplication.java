@@ -32,7 +32,7 @@ public class MainApplication extends GraphicsApplication  {
 		leaderboard = new LeaderboardPane(this);
 		difficulty = new DifficultyPane(this);
 		
-		//I, Michael, Placed this here because it made sense to place it before gamemodePane
+		//Placed this here because it made sense to place it before gamemodePane
 		cDifficulty = difficulty.getCurrentD();
 		
 		gamemodePane = new GamemodePane(this, cDifficulty);
@@ -52,7 +52,7 @@ public class MainApplication extends GraphicsApplication  {
 		switchToScreen(difficulty);
 	}
 
-	public void switchToSome() {
+	public void switchToMode() {
 		switchToScreen(gamemodePane);
 	}
 	
