@@ -45,6 +45,9 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 	public boolean getStatus() {
 		return gameOver;
 	}
+	public Mole[] getMoleArray() {
+		return molesInHoles;
+	}
 	
 	//This method will create an array of the appropriate size for the current game
 	public void setupMoles(int value) {

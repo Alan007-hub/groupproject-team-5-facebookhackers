@@ -1,9 +1,11 @@
 package starter;
 
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 
 import acm.graphics.GImage;
 import acm.graphics.GObject;
+import acm.graphics.GOval;
 
 public class MolePane extends GraphicsPane{
 	public static final int WINDOW_WIDTH = 800;
@@ -27,7 +29,11 @@ public class MolePane extends GraphicsPane{
 	@Override
 	public void showContents() {
 		program.add(img);
-		
+		for(Mole tempMole:cGame.getMoleArray()) {
+			GOval hole = new GOval(tempMole.getSpawn().getX(), tempMole.getSpawn().getY(), tempMole.getSpawn().getWidth(), tempMole.getSpawn().getHeight());
+			hole.setColor(Color.BLACK);
+			program.add(hole);
+		}
 	}
 
 	@Override
