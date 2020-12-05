@@ -51,7 +51,7 @@ public class GamemodePane extends GraphicsPane {
 	public void mousePressed(MouseEvent e) {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == standard) {
-			program.switchToDifficulty();
+			program.switchToMole();
 			cGamemode = new Standard(cDiff);
 		}else if (obj == survival) {
 			program.switchToDifficulty();
