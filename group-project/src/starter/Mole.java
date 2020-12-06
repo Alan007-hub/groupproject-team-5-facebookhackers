@@ -14,6 +14,9 @@ public class Mole implements ActionListener{
 		private Timer movementTimer;
 		private int count;
 		Random randInt;
+		private boolean miss;
+		//public boolean getMiss();
+		
 		
 		public void actionPerformed(ActionEvent e){
 			if(count < MAX_COUNT) {
@@ -22,11 +25,11 @@ public class Mole implements ActionListener{
 			}
 			if(count == MAX_COUNT) {
 				//identify as a miss
-				
+				miss=true;
 				//-------------
 				count = 0;
 				while(mole.getY() != spawn.getY()) {
-					mole.setLocation(mole.getX(), mole.getY() + 10);
+					mole.setLocation(mole.getX(), mole.getY() + 5);
 				}
 			}
 		}
@@ -51,7 +54,9 @@ public class Mole implements ActionListener{
 			mole = new GImage("mole.png",spawn.getX(),spawn.getY());
 			mole.setSize(spawn.getWidth(), spawn.getHeight());
 			randInt = new Random();
+			miss=false;
 			count = 0;
+			
 		}
 		
 		Mole(SpawnPoint spawn){
@@ -59,6 +64,7 @@ public class Mole implements ActionListener{
 			mole = new GImage("mole.png",this.spawn.getX(),this.spawn.getY());
 			mole.setSize(spawn.getWidth(), spawn.getHeight());
 			randInt = new Random();
+			miss=false;
 			count = 0;
 		}
 		
@@ -67,6 +73,7 @@ public class Mole implements ActionListener{
 			mole = new GImage("mole.png",spawn.getX(),spawn.getY());
 			mole.setSize(spawn.getWidth(), spawn.getHeight());
 			randInt = new Random();
+			miss=false;
 			count = 0;
 		}
 		
@@ -82,5 +89,9 @@ public class Mole implements ActionListener{
 		public void setSpawn(SpawnPoint spawn) {
 			this.spawn = spawn;
 		}		
+		
+		public boolean getMiss() {
+			return miss;
+		}
 
 }

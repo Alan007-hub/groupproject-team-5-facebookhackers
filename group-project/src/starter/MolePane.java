@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import acm.graphics.GImage;
 import acm.graphics.GLabel;
-import acm.graphics.GObject;
 import acm.graphics.GOval;
 import javax.swing.Timer;
 
@@ -21,8 +20,7 @@ public  class MolePane extends GraphicsPane implements ActionListener{
 	private int score = 0; //= cGame.getScore();
 	private int timeLeft = 5; //= cGame.getDifficulty().getTimer();
 	private Timer gameTimer = new Timer(50, this);
-	private int timerAdd = 0;
-	
+	private int timerAdd = 0;	
 	private GLabel scoreLabel = new GLabel("Score: " + score, 50, 50);
 	private GLabel timerLabel = new GLabel("Time Remaining: " + timeLeft, 550, 50);
 	
