@@ -3,7 +3,10 @@ package starter;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 
+import com.sun.glass.ui.Timer;
+
 import acm.graphics.GImage;
+import acm.graphics.GLabel;
 import acm.graphics.GObject;
 import acm.graphics.GOval;
 
@@ -13,15 +16,23 @@ public class MolePane extends GraphicsPane{
 	private MainApplication program;
 	private GImage imgBG;
 	private Gamemode cGame;
+
 	
 	//may need these to display properly a score variable
 	private int score; //= cGame.getScore();
 	private int timeLeft; //= cGame.getDifficulty().getTimer();
+	
+	private GLabel scoreLabel = new GLabel("Score: " + score, 50, 50);
+	private GLabel timerLabel = new GLabel("Time Remaining: " + timeLeft, 450, 650);
+	
+
 
 	public MolePane(MainApplication app, Gamemode cGame) {
 		this.program = app;
 		imgBG = new GImage("LevelBG.jpg");
 		this.cGame = cGame;
+		scoreLabel.setFont(MainApplication.menuFont);
+		timerLabel.setFont(MainApplication.menuFont);
 	}
 	
 	//Setup the the game
@@ -33,7 +44,12 @@ public class MolePane extends GraphicsPane{
 	@Override
 	public void showContents() {
 		program.add(imgBG);
+		program.add(scoreLabel);
+		program.add(timerLabel);
+
+
 		this.setup();
+		
 		 
 		for(Mole tempMole:cGame.getMoleArray()) {
 			GOval hole = new GOval(tempMole.getSpawn().getX(), tempMole.getSpawn().getY(), tempMole.getSpawn().getWidth(), tempMole.getSpawn().getHeight());
