@@ -20,6 +20,15 @@ public class Mole implements ActionListener{
 				mole.setLocation(mole.getX(), mole.getY() - 5);
 				count++;
 			}
+			if(count == MAX_COUNT) {
+				//identify as a miss
+				
+				//-------------
+				count = 0;
+				while(mole.getY() != spawn.getY()) {
+					mole.setLocation(mole.getX(), mole.getY() + 10);
+				}
+			}
 		}
 		
 		public void moveMoleDown() {
