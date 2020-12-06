@@ -54,7 +54,8 @@ public class GamemodePane extends GraphicsPane {
 			cGamemode = new Standard(cDiff);
 			program.switchToMole();
 		}else if (obj == survival) {
-			program.switchToDifficulty();
+			cGamemode= new Survival(cDiff);
+			program.switchToMole();
 		}
 	}
 }
