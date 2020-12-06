@@ -10,6 +10,9 @@ import javax.swing.*;
 
 //this class should be responsible for establishing the rules but not making the game function
 public abstract class Gamemode extends GraphicsProgram{//made it so that we can add mouselisteners and listen to events
+	public static final int HOLE_X_PADDING = 75;
+	public static final int BOTTOM_ROW_PADDING = 60;
+	public static final int TOP_ROW_PADDING = 37;
 	protected Difficulty currentDLevel;
 	protected Mole molesInHoles[];//This is the number of moles to appear on screen? A)No, its an array to hold the moles
 	protected boolean gameOver;
@@ -65,17 +68,20 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 					molesInHoles = new Mole[9];
 					break;
 			}
-			for(Mole moleTemp: molesInHoles) {
-				moleTemp = new Mole();//did we already assign an image to this when we do this?
-			}
+			/*
+			for(int i = 0; i < molesInHoles.length; i++) {
+				//did we already assign an image to this when we do this?
+				molesInHoles[i] = new Mole();
+			}*/
 		}
 	
-		public void mousePressed(MouseEvent e) {//how do we connect the mole with the mouse?
+		public void mousePressed(MouseEvent e, GObject current) {//how do we connect the mole with the mouse?
 			//do we make a loop to check if we clicked on the mole for every mole in the array?
 			for (int i=0; i < molesInHoles.length; i++ ) {
-				if (getElementAt( e.getX() , e.getY() ) == molesInHoles[i].getMoleImage()) {
+				if (current.equals(molesInHoles[i].getMoleImage())) {
 					calculateScore();
-					i = molesInHoles.length;
+					molesInHoles[i].moveMoleDown();
+					break;
 					//may need to consider animations here
 				}
 			}
@@ -84,44 +90,44 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 	
 		//this method will assign the x and y coordinates for each spawns point
 		public void setupHoles(int windowWidth, int windowHeight) {
-			int x = windowWidth;
+			float x;
 			
 			//The y position for the middle row of holes
-			int y = windowHeight * (3/4); // estimates may need to change later
+			float y = (windowHeight * (3/4f)); // estimates may need to change later
 			
 			//At a minimum we will need 3 holes. We always create the first 3 in the middle row.
 			for(int i = 1; i <= 3; i++) {
-				x = x * (i/3);
-				molesInHoles[i-1].setSpawn(new SpawnPoint(x, y));
+				x = (windowWidth * ((i-1)/3f)) + HOLE_X_PADDING;
+				molesInHoles[i-1]= new Mole((new SpawnPoint(x, y)));
 			}
 			
 			//Now if easy is selected we will only need 4 holes but if Hard is selected we will need 6.
 			//If statement determines if we have at least 4 moles
-			if(molesInHoles.length >= 4) {
-				x = windowWidth;
-				
+			if(molesInHoles.length == 4) {
 				//The y position for the bottom row of holes
-				y = windowHeight * (4/5);// estimates may need to change later
-				for(int i = 1; i <= 3; i++) {
-					x = x * (i/3);
-					molesInHoles[i+2].setSpawn(new SpawnPoint(x, y));
+				y = (windowHeight * (2/3f)) - TOP_ROW_PADDING;// estimates may need to change later
 				
-					//if we only have 4 holes then we stop the for loop after one iteration
-					if(molesInHoles.length == 4) {
-						i = 4;
-					}
-				}
+				x = (windowWidth * (1/3f)) + HOLE_X_PADDING;
+				molesInHoles[3] = new Mole(new SpawnPoint(x, y));
+				
 			}
 			//All that is left is to generate the final row of holes if necessary (TOP ROW)
-			if(molesInHoles.length > 6) {
-				x = windowWidth;
-				
+			if(molesInHoles.length >= 6) {
 				//The y position for the top row of holes
-				y = windowHeight * (2/3);// estimates may need to change later
+				y = (windowHeight * (2/3f)) - TOP_ROW_PADDING;// estimates may need to change later
 				
 				for(int i = 1; i <= 3; i++) {
-					x = x * (i/3);
-					molesInHoles[i+5].setSpawn(new SpawnPoint(x, y));
+					x = (windowWidth * ((i-1)/3f)) + HOLE_X_PADDING;
+					molesInHoles[i+2] = new Mole(new SpawnPoint(x, y));
+				}
+			}
+			if(molesInHoles.length == 9) {
+				//The y position for the top row of holes
+				y = (windowHeight * (4/5f)) + BOTTOM_ROW_PADDING;// estimates may need to change later
+				
+				for(int i = 1; i <= 3; i++) {
+					x = (windowWidth * ((i-1)/3f)) + HOLE_X_PADDING;
+					molesInHoles[i+5]= new Mole(new SpawnPoint(x, y));
 				}
 			}
 			

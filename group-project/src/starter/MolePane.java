@@ -11,12 +11,12 @@ public class MolePane extends GraphicsPane{
 	public static final int WINDOW_WIDTH = 800;
 	public static final int WINDOW_HEIGHT = 600;
 	private MainApplication program;
-	private GImage img;
+	private GImage imgBG;
 	private Gamemode cGame;
 
 	public MolePane(MainApplication app, Gamemode cGame) {
 		this.program = app;
-		img = new GImage("LevelBG.jpg");
+		imgBG = new GImage("LevelBG.jpg");
 		this.cGame = cGame;
 	}
 	
@@ -28,23 +28,28 @@ public class MolePane extends GraphicsPane{
 	
 	@Override
 	public void showContents() {
-		program.add(img);
+		program.add(imgBG);
+		this.setup();
+		 
 		for(Mole tempMole:cGame.getMoleArray()) {
 			GOval hole = new GOval(tempMole.getSpawn().getX(), tempMole.getSpawn().getY(), tempMole.getSpawn().getWidth(), tempMole.getSpawn().getHeight());
+			hole.setFilled(true);
 			hole.setColor(Color.BLACK);
 			program.add(hole);
-		}
+			program.add(tempMole.getMoleImage());
+			tempMole.startGame();
+		}	
 	}
+	
 
 	@Override
 	public void hideContents() {
-		program.remove(img);
+		program.remove(imgBG);
 
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		
-		
+		cGame.mousePressed(e, program.getElementAt(e.getX(), e.getY()));
 	}
 }

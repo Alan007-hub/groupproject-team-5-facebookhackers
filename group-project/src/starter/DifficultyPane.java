@@ -61,17 +61,17 @@ public class DifficultyPane extends GraphicsPane {
 	public void mousePressed(MouseEvent e) {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == easy) {
+			program.setDifficulty(new Difficulty(0));
 			program.switchToMode();
-			currentDifficulty = new Difficulty(0);
 		}else if (obj == medium) {
+			program.setDifficulty( new Difficulty(1));
 			program.switchToMode();
-			currentDifficulty = new Difficulty(1);
 		}else if (obj == hard) {
+			program.setDifficulty(new Difficulty(2));
 			program.switchToMode();
-			currentDifficulty = new Difficulty(2);
 		}else if (obj == impossible) {
+			program.setDifficulty(new Difficulty(3));
 			program.switchToMode();
-			currentDifficulty = new Difficulty(3);
 		}
 	}
 }

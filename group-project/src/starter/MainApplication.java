@@ -17,8 +17,12 @@ public class MainApplication extends GraphicsApplication  {
 	private Difficulty cDifficulty;
 	private LeaderboardPane leaderboard;
 	private Gamemode cGamemode;
+	
 	public void init() {
 		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+	}
+	public void setDifficulty(Difficulty diff) {
+		cDifficulty = diff;
 	}
 
 	public void run() {		
@@ -32,16 +36,8 @@ public class MainApplication extends GraphicsApplication  {
 		leaderboard = new LeaderboardPane(this);
 		difficulty = new DifficultyPane(this);
 		
-		//Placed this here because it made sense to place it before gamemodePane
-		cDifficulty = difficulty.getCurrentD();
-		
-		gamemodePane = new GamemodePane(this, cDifficulty);
-		
-		cGamemode = gamemodePane.getGamemode();
-		
-		molePane = new MolePane(this, cGamemode);	
-		
-		switchToMenu();		
+		switchToMenu();	
+			
 	}
 
 	public void switchToMenu() {
@@ -53,10 +49,13 @@ public class MainApplication extends GraphicsApplication  {
 	}
 
 	public void switchToMode() {
+		gamemodePane = new GamemodePane(this, cDifficulty);
 		switchToScreen(gamemodePane);
 	}
 	
 	public void switchToMole() {
+		cGamemode = gamemodePane.getGamemode();
+		molePane = new MolePane(this, cGamemode);
 		switchToScreen(molePane);
 	}
 	
