@@ -2,9 +2,6 @@ package starter;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
-
-import com.sun.glass.ui.Timer;
-
 import acm.graphics.GImage;
 import acm.graphics.GLabel;
 import acm.graphics.GObject;
@@ -20,11 +17,11 @@ public class MolePane extends GraphicsPane{
 	
 	//may need these to display properly a score variable
 	//Find where it should equal zero
-	private int score; //= cGame.getScore();
-	private int timeLeft; //= cGame.getDifficulty().getTimer();
+	private int score = 0; //= cGame.getScore();
+	private int timeLeft = 90; //= cGame.getDifficulty().getTimer();
 	
 	private GLabel scoreLabel = new GLabel("Score: " + score, 50, 50);
-	private GLabel timerLabel = new GLabel("Time Remaining: " + timeLeft, 450, 650);
+	private GLabel timerLabel = new GLabel("Time Remaining: " + timeLeft, 550, 50);
 	
 
 
@@ -58,6 +55,7 @@ public class MolePane extends GraphicsPane{
 			hole.setColor(Color.BLACK);
 			program.add(hole);
 			program.add(tempMole.getMoleImage());
+
 			tempMole.startGame();
 		}	
 	}
@@ -66,8 +64,14 @@ public class MolePane extends GraphicsPane{
 	@Override
 	public void hideContents() {
 		program.remove(imgBG);
-
+		program.remove(scoreLabel);
+		program.remove(timerLabel);
 	}
+	
+	public void incrementDecrementScore(int s) {
+		score += s;
+	}
+
 
 	@Override
 	public void mousePressed(MouseEvent e) {
