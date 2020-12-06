@@ -1,23 +1,23 @@
 package starter;
+
 import java.lang.*;
 
-public class Survival extends Gamemode{
+public class Survival extends Gamemode {
 	private int score;
 	private int numMiss;
 
-	
-	Survival(){
+	Survival() {
 		currentDLevel = new Difficulty();
 		gameOver = false;
-		numMiss=0;
+		numMiss = 0;
 		score = 0;
 		moleWasHit = false;
 	}
-	
-	Survival(Difficulty d){
+
+	Survival(Difficulty d) {
 		currentDLevel = d;
 		gameOver = false;
-		numMiss=0;
+		numMiss = 0;
 		score = 0;
 		moleWasHit = false;
 	}
@@ -25,12 +25,10 @@ public class Survival extends Gamemode{
 	boolean endGame() {
 
 		missDetection();
-		if (numMiss==3) {
+		if (numMiss == 3) {
 			setStatus(true);
 		}
 
-		
-		
 		return getStatus();
 	}
 
@@ -40,17 +38,14 @@ public class Survival extends Gamemode{
 				numMiss++;
 			}
 
-			
 		}
-		
-		
+
 	}
 
 	@Override
 	void calculateScore() {
 		// TODO Auto-generated method stub
-		score+=100;
+		score += 100;
 	}
 
-	
 }
