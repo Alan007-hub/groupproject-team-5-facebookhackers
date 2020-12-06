@@ -12,6 +12,7 @@ public class MainApplication extends GraphicsApplication  {
 	private GamemodePane gamemodePane;
 	private MenuPane menu;
 	private AudioPlayer menuSong;
+	private AudioPlayer mainGameSong;
 	private DifficultyPane difficulty;
 	private MolePane molePane; 
 	private Difficulty cDifficulty;
@@ -56,6 +57,10 @@ public class MainApplication extends GraphicsApplication  {
 	public void switchToMole() {
 		cGamemode = gamemodePane.getGamemode();
 		molePane = new MolePane(this, cGamemode);
+		mainGameSong = AudioPlayer.getInstance();
+		menuSong.stopSound(MUSIC_FOLDER, "menuLeaderBoard.mp3");
+		mainGameSong.playSound(MUSIC_FOLDER, "gameSongNormalBPM.mp3", true);
+
 		switchToScreen(molePane);
 	}
 	
