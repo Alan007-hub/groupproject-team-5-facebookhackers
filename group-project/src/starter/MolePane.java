@@ -15,6 +15,7 @@ public class MolePane extends GraphicsPane{
 	private Gamemode cGame;
 	
 	//may need these to display properly a score variable
+	//Find where it should equal zero
 	private int score; //= cGame.getScore();
 	private int timeLeft; //= cGame.getDifficulty().getTimer();
 

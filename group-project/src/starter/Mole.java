@@ -36,11 +36,13 @@ public class Mole implements ActionListener{
 			movementTimer.setInitialDelay(randInt.nextInt(5)*1000);
 			movementTimer.start();
 		}
+		
 		Mole(){
 			spawn = new SpawnPoint();
 			mole = new GImage("mole.png",spawn.getX(),spawn.getY());
 			mole.setSize(spawn.getWidth(), spawn.getHeight());
 			randInt = new Random();
+			count = 0;
 		}
 		
 		Mole(SpawnPoint spawn){
@@ -48,6 +50,7 @@ public class Mole implements ActionListener{
 			mole = new GImage("mole.png",this.spawn.getX(),this.spawn.getY());
 			mole.setSize(spawn.getWidth(), spawn.getHeight());
 			randInt = new Random();
+			count = 0;
 		}
 		
 		Mole(int x, int y){
@@ -55,6 +58,7 @@ public class Mole implements ActionListener{
 			mole = new GImage("mole.png",spawn.getX(),spawn.getY());
 			mole.setSize(spawn.getWidth(), spawn.getHeight());
 			randInt = new Random();
+			count = 0;
 		}
 		
 		//Getters and Setters
