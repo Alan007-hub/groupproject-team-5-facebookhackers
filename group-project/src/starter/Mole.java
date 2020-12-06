@@ -26,7 +26,7 @@ public class Mole implements ActionListener{
 				//-------------
 				count = 0;
 				while(mole.getY() != spawn.getY()) {
-					mole.setLocation(mole.getX(), mole.getY() + 10);
+					mole.setLocation(mole.getX(), mole.getY() + 5);
 				}
 			}
 		}
