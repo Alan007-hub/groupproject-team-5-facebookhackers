@@ -3,17 +3,10 @@ package starter;
 import java.awt.Font;
 
 public class MainApplication extends GraphicsApplication  {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	public static final int WINDOW_WIDTH = 800;
 	public static final int WINDOW_HEIGHT = 600;
 	public static final String MUSIC_FOLDER = "sounds";
 	public static Font menuFont = new Font("Serif", Font.BOLD, 22);
-
-
-
 
 	private GamemodePane gamemodePane;
 	private MenuPane menu;
@@ -49,6 +42,8 @@ public class MainApplication extends GraphicsApplication  {
 
 	public void switchToMenu() {
 		switchToScreen(menu);
+		menuSong.stopSound(MUSIC_FOLDER, "gameSongNormalBPM.mp3");
+		menuSong.playSound(MUSIC_FOLDER, "menuLeaderBoard.mp3", true);		
 	}
 
 	public void switchToDifficulty() {
@@ -66,7 +61,6 @@ public class MainApplication extends GraphicsApplication  {
 		mainGameSong = AudioPlayer.getInstance();
 		menuSong.stopSound(MUSIC_FOLDER, "menuLeaderBoard.mp3");
 		mainGameSong.playSound(MUSIC_FOLDER, "gameSongNormalBPM.mp3", true);
-
 		switchToScreen(molePane);
 	}
 	
