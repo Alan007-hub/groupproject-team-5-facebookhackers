@@ -13,6 +13,10 @@ public class MolePane extends GraphicsPane{
 	private MainApplication program;
 	private GImage imgBG;
 	private Gamemode cGame;
+	
+	//may need these to display properly a score variable
+	private int score = cGame.getScore();
+	private int timeLeft = cGame.getDifficulty().getTimer();
 
 	public MolePane(MainApplication app, Gamemode cGame) {
 		this.program = app;
