@@ -45,8 +45,8 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 	}
 	
 	public int getScore() {//it calls the method from here
-		
-		calculateScore();
+		//In the future this is bad practice as a getter should only return a value
+		//calculateScore();
 		return score;
 	}
 	

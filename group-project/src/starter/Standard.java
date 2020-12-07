@@ -27,9 +27,6 @@ public class Standard extends Gamemode {
 			//This will set the gameOver to true
 			setStatus(true);
 		}
-
-		
-		
 		return getStatus();
 	}
 

@@ -82,7 +82,7 @@ public  class MolePane extends GraphicsPane implements ActionListener{
 	public void actionPerformed(ActionEvent e) {	
 		timerAdd++;
 		gameOver();
-		cGame.calculateScore();
+		//cGame.calculateScore();
 		scoreLabel.setLabel("Score: " + score);
 		timerLabel.setLabel("Time Remaining: " + timeLeft);
 		if(everyXSeconds(1))
