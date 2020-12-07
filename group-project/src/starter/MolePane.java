@@ -23,6 +23,7 @@ public  class MolePane extends GraphicsPane implements ActionListener{
 	private int timerAdd = 0;	
 	private GLabel scoreLabel; 
 	private GLabel timerLabel; 
+	//push
 	
 	public MolePane(MainApplication app, Gamemode cGame) {
 		this.program = app;
