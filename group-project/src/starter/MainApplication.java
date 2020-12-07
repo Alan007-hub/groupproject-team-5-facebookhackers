@@ -6,7 +6,7 @@ public class MainApplication extends GraphicsApplication  {
 	public static final int WINDOW_WIDTH = 800;
 	public static final int WINDOW_HEIGHT = 600;
 	public static final String MUSIC_FOLDER = "sounds";
-	public static Font menuFont = new Font("Serif", Font.BOLD, 22);
+	public static Font menuFont = new Font("Serif", Font.BOLD, 26);
 
 	private GamemodePane gamemodePane;
 	private MenuPane menu;

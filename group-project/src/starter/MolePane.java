@@ -15,6 +15,8 @@ public  class MolePane extends GraphicsPane implements ActionListener{
 	public static final int WINDOW_HEIGHT = 600;
 	private MainApplication program;
 	private GImage imgBG;
+	private GImage scores;
+	private GImage timeRemaining;
 	private Gamemode cGame;
 	
 	private int score = 0; //= cGame.getScore();
@@ -28,12 +30,16 @@ public  class MolePane extends GraphicsPane implements ActionListener{
 	public MolePane(MainApplication app, Gamemode cGame) {
 		this.program = app;
 		imgBG = new GImage("LevelBG.jpg");
+		scores = new GImage("Score.png", 16,82);
+		timeRemaining = new GImage("TimeRemaining.png", 16, 15);
 		this.cGame = cGame;
-		scoreLabel= new GLabel("Score: " + score, 50, 50);
-		timerLabel= new GLabel("Time Remaining: " + cGame.getDifficulty().getTimer(), 550, 50);
+		scoreLabel= new GLabel("" + score, 105, 118);
+		timerLabel= new GLabel("" + cGame.getDifficulty().getTimer(), 110, 50);
 		timeLeft=cGame.getDifficulty().getTimer();
 		scoreLabel.setFont(MainApplication.menuFont);
 		timerLabel.setFont(MainApplication.menuFont);
+		scoreLabel.setColor(Color.WHITE);
+		timerLabel.setColor(Color.WHITE);
 		gameTimer.start();
 	}
 
@@ -46,15 +52,15 @@ public  class MolePane extends GraphicsPane implements ActionListener{
 	@Override
 	public void showContents() {
 		program.add(imgBG);
+		program.add(scores);
+		program.add(timeRemaining);
 		program.add(scoreLabel);
 		program.add(timerLabel);
 		
 		this.setup();
 		
 		for(Mole tempMole:cGame.getMoleArray()) {
-			GOval hole = new GOval(tempMole.getSpawn().getX(), tempMole.getSpawn().getY(), tempMole.getSpawn().getWidth(), tempMole.getSpawn().getHeight());
-			hole.setFilled(true);
-			hole.setColor(Color.BLACK);
+			GImage hole = new GImage("Hole.png", tempMole.getSpawn().getX(), tempMole.getSpawn().getY());
 			program.add(hole);
 			program.add(tempMole.getMoleImage());
 			tempMole.startGame();
@@ -64,6 +70,8 @@ public  class MolePane extends GraphicsPane implements ActionListener{
 	@Override
 	public void hideContents() {
 		program.remove(imgBG);
+		program.remove(scores);
+		program.remove(timeRemaining);
 		program.remove(scoreLabel);
 		program.remove(timerLabel);
 	}
@@ -84,11 +92,10 @@ public  class MolePane extends GraphicsPane implements ActionListener{
 		timerAdd++;
 		gameOver();
 		//cGame.calculateScore();
-		scoreLabel.setLabel("Score: " + score);
-		timerLabel.setLabel("Time Remaining: " + timeLeft);
+		scoreLabel.setLabel("" + score);
+		timerLabel.setLabel("" + timeLeft);
 		if(everyXSeconds(1))
 			timeLeft--;	
-		
 	}
 	
 	public void gameOver() {
@@ -97,5 +104,4 @@ public  class MolePane extends GraphicsPane implements ActionListener{
 			gameTimer.stop();
 		}
 	}
-	
 }
