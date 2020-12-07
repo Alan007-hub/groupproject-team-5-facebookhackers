@@ -93,6 +93,7 @@ public  class MolePane extends GraphicsPane implements ActionListener{
 	public void gameOver() {
 		if(timeLeft < 0) {
 			program.switchToLeaderboard();	
+			gameTimer.stop();
 		}
 	}
 	
