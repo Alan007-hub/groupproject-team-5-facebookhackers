@@ -28,16 +28,16 @@ public class Difficulty {
 		//Isn't this suppose to be related to the name of the Difficulty array?
 		//If so, we need to add two more ?
 		case 0:
-			time = 90;
-			break;
-		case 1:
-			time = 75;
-			break;
-		case 2:
 			time = 60;
 			break;
+		case 1:
+			time = 50;
+			break;
+		case 2:
+			time = 30;
+			break;
 		case 3:
-			time = 45;
+			time = 30;
 			break;	
 		}		
 	}
