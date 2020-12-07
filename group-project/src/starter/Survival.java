@@ -3,14 +3,15 @@ package starter;
 import java.lang.*;
 
 public class Survival extends Gamemode {
-	private int score;
+	//private int score;
 	private int numMiss;
 
+	
 	Survival() {
 		currentDLevel = new Difficulty();
 		gameOver = false;
 		numMiss = 0;
-		score = 0;
+		//score = 0;
 		moleWasHit = false;
 	}
 
@@ -18,7 +19,7 @@ public class Survival extends Gamemode {
 		currentDLevel = d;
 		gameOver = false;
 		numMiss = 0;
-		score = 0;
+		//score = 0;
 		moleWasHit = false;
 	}
 

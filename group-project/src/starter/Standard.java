@@ -2,7 +2,7 @@ package starter;
 import java.lang.*;
 
 public class Standard extends Gamemode {
-	private int score;
+	//private int score;
 	
 	//constructor
 	Standard(){

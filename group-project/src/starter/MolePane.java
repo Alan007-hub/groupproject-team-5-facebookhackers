@@ -21,13 +21,16 @@ public  class MolePane extends GraphicsPane implements ActionListener{
 	private int timeLeft = 5; //= cGame.getDifficulty().getTimer();
 	private Timer gameTimer = new Timer(50, this);
 	private int timerAdd = 0;	
-	private GLabel scoreLabel = new GLabel("Score: " + score, 50, 50);
-	private GLabel timerLabel = new GLabel("Time Remaining: " + timeLeft, 550, 50);
+	private GLabel scoreLabel; 
+	private GLabel timerLabel; 
 	
 	public MolePane(MainApplication app, Gamemode cGame) {
 		this.program = app;
 		imgBG = new GImage("LevelBG.jpg");
 		this.cGame = cGame;
+		scoreLabel= new GLabel("Score: " + score, 50, 50);
+		timerLabel= new GLabel("Time Remaining: " + cGame.getDifficulty().getTimer(), 550, 50);
+		timeLeft=cGame.getDifficulty().getTimer();
 		scoreLabel.setFont(MainApplication.menuFont);
 		timerLabel.setFont(MainApplication.menuFont);
 		gameTimer.start();
@@ -79,6 +82,7 @@ public  class MolePane extends GraphicsPane implements ActionListener{
 	public void actionPerformed(ActionEvent e) {	
 		timerAdd++;
 		gameOver();
+		cGame.calculateScore();
 		scoreLabel.setLabel("Score: " + score);
 		timerLabel.setLabel("Time Remaining: " + timeLeft);
 		if(everyXSeconds(1))

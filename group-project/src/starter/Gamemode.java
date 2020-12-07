@@ -35,13 +35,18 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 		currentDLevel = d;
 		score = 0;
 		gameOver = false;
+		moleWasHit=false;
 	}
+	
+	abstract void calculateScore();
 	
 	public Difficulty getDifficulty() {
 		return currentDLevel;
 	}
 	
-	public int getScore() {
+	public int getScore() {//it calls the method from here
+		
+		calculateScore();
 		return score;
 	}
 	
@@ -154,6 +159,6 @@ public abstract class Gamemode extends GraphicsProgram{//made it so that we can 
 		}
 		
 		//The following methods are abstract because each mode will implement them slightly differently
-		abstract void calculateScore();
+		//abstract void calculateScore();
 		abstract boolean endGame();//This is to end the game right?
 }
