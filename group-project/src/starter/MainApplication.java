@@ -64,6 +64,11 @@ public class MainApplication extends GraphicsApplication  {
 		switchToScreen(molePane);
 	}
 	
+	//switch to leaderboard for when the game is over
+	public void switchToLeaderboard(int cScore) {
+		switchToScreen(leaderboard);
+	}
+	//switch to leaderboard for when at the menu
 	public void switchToLeaderboard() {
 		switchToScreen(leaderboard);
 	}
