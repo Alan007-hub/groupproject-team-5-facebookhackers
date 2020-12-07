@@ -31,7 +31,7 @@ public class Difficulty {
 			time = 60;
 			break;
 		case 1:
-			time = 50;
+			time = 45;
 			break;
 		case 2:
 			time = 30;
